@@ -1,3 +1,8 @@
+* {
+  /*border: 1px solid red;*/
+}
+
+
 body,
 div,
 ul,
@@ -12,6 +17,7 @@ h6 {
   padding:0;
   margin:0;
   font-family: "Roboto", sans-serif;
+  /*border: 1px solid red;*/
 }
 
 .clear-fix {
@@ -22,6 +28,10 @@ h6 {
 .work-entry,
 .project-entry {
   padding: 0 5%;
+}
+
+.work-entry a {
+  /*color: #484848;*/
 }
 
 h1 {
@@ -88,8 +98,13 @@ p {
 a {
   color: #1199c3;
   text-decoration: none;
-  margin-top: 10px;
+  /*margin-top: 10px;*/
   display: block;
+
+}
+
+.education-entry a:last-of-type {
+  margin-top: 0;
 }
 
 .welcome-message {
@@ -112,6 +127,11 @@ a {
   color: #f5ae23;
 }
 
+.fa {
+  line-height: 16px;
+  color: #f5ae23;
+}
+
 .white-text {
   font-weight: bold;
   color: #fff;
@@ -129,7 +149,8 @@ a {
 
 /* TODO: Replace with image later */
 #header {
-  background-color: #484848;
+  /*background-color: #484848;*/
+  background: #111 url("./../../../../Icons_and_Git/patterns/transparent textures/white-diamond.png");
 }
 
 .flex-box {
@@ -138,7 +159,9 @@ a {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
+  /*align-content: flex-start;*/
   padding: 10px;
+  /*border: 1px solid yellow;*/
 }
 
 .flex-column {
@@ -148,27 +171,51 @@ a {
   padding: 10px;
 }
 
+.flex-item {
+  /*flex: 1 1;*/
+  /*border: 1px solid orange;*/
+}
+
 .center-content {
   padding: 2.5% 5%;
 }
 
 ul {
-  list-style-type: none;
+  list-style: none;
+  /*border: 1px solid red;*/
+}
+
+.flex-item:hover .white-text {
+  /*font-style: italic;*/
+  /*bottom: 2px;*/
+  color: #1199c3;
+}
+
+#topContacts {
+  padding: 0 0 10px;
 }
 
 .biopic {
   float: left;
   padding: 10px;
-  width: 200px;
+  width: 150px;
   display: none;
+  /*border-radius: 100px;*/
 }
 
 img {
-  padding: 10px;
+  /*padding: 10px;*/
+}
+
+.project-entry > img {
+  width: 50%;
+  border: 2px solid #f3f3f3;
+  border-radius: 10px;
 }
 
 span {
   padding: 5px;
+  /*border: 1px solid yellow;*/
 }
 
 #lets-connect {
@@ -185,7 +232,7 @@ span {
 
 @media only screen and (max-width:900px) {
   .biopic {
-    width: 175px;
+    max-width: 175px;
   }
 }
 
@@ -194,7 +241,7 @@ span {
     margin-top: 10%;
   }
   .biopic {
-    width: 150px;
+    max-width: 150px;
   }
   .welcome-message {
     display: none;
@@ -204,7 +251,7 @@ span {
 #map {
   display: block;
   height: 100%;
-  margin: 0 5%;
+  margin: 0 10%;
 }
 
 #mapDiv {
