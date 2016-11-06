@@ -17,7 +17,7 @@ var bio = {
     	"location": ["fa fa-street-view", "https://www.google.ca/maps/place/Montreal,+QC/@45.5600397,-73.8524774,11z/data=!3m1!4b1!4m5!3m4!1s0x4cc91a541c64b70d:0x654e3138211fefef!8m2!3d45.5016889!4d-73.567256"],
     	"linkedin": ["fa fa-linkedin", "https://ca.linkedin.com/in/canadian-shauna-kerr"]
     },
-    "biopic": "images/sketch.jpg",
+    "biopic": "build/images/sketch.jpg",
     "welcomeMessage": "Welcome!",
     "skills": ["HTML", "CSS", "Python", "JavaScript"],
     "display": function() {
@@ -37,11 +37,11 @@ var bio = {
             	// append contact info; add attribute
                 $("#topContacts").append(item);
                 $("#footerContacts").append(item);
-            	$(".orange-text").attr("aria-hidden", "true");
+            	$(".bright-text").attr("aria-hidden", "true");
 
             	// add icons
-            	$("#topContacts .orange-text:last").addClass( bio.iconAndLinks[key][0]);
-            	$("#footerContacts .orange-text:last").addClass( bio.iconAndLinks[key][0]);
+            	$("#topContacts .bright-text:last").addClass( bio.iconAndLinks[key][0]);
+            	$("#footerContacts .bright-text:last").addClass( bio.iconAndLinks[key][0]);
 
             	// wrap list items in <a> tags
             	$("#topContacts .flex-item:last span").wrapAll("<a target='_blank'></a>");
@@ -65,60 +65,63 @@ var bio = {
 };
 
 var work = {
-    "jobs": [{
-        "title": "Freelance Violist",
-        "employer": "Self-employed",
-        "dates": "1994 - current",
-        "location": ["Regina, SK", " Montreal, QC"],
-        "description": "Performed in numerous chamber ensembles and orchestras" +
-        	" at a wide variety of functions, including many special events" +
-        	" such as the Saskatchewan Centennial Gala (attended by Queen" +
-        	" Elizabeth II) and the 2008 Canadian Country Music Awards;",
-        "url": "http://www.triodacapo.com/"
-    },{
-        "title": "Accounts Receivable Coordinator",
-        "employer": "Globe Union (Canada) Inc.",
-        "dates": "2009 - 2015",
-        "location": "Montreal, QC",
-        "description": "Began as an A/P Coordinator temp via Groom & Associates Staffing" +
-        	" Agency; recruited within a month for a permanent cash" +
-        	" application position - entered invoice payments from 1000" +
-        	" cheques monthly."
-    },{
-    	"title": "Accounts Payable Accounting Clerk",
-    	"employer": "Groom & Associates, Staffing Agency",
-    	"dates": "2008 - 2009",
-    	"location": "Montreal, QC",
-    	"description": "Positioned at Bechtel Corporation, Kitimat Project -" +
-    		" assisted in daily and monthly routine accounting activities; audited" +
-    		" invoices; analyzed and reconciled a variety of documents and data;" +
-    		" created and maintained excel spreadsheets; produced reports;"
-    },{
-        "title": "Section Violist",
-        "employer": "Regina Symphony Orchestra",
-        "dates": "1996 - 2008",
-        "location": "Regina, SK",
-        "description": "Performed in dozens of symphonic, opera, and chamber" +
-        	" concerts every year."
-    },{
-    	"title": "Corporate Legal Assistant",
-    	"employer": "Kanuka Thuringer LLP",
-    	"dates": "2007 - 2008",
-    	"location": "Regina, SK",
-    	"description": "Conducted routine legal services for 1000s of" +
-    		" corporations, ensuring they were all kept up to date and on the" +
-    		" Provincial Register."
-    },{
-    	"title": "General Office Manager",
-    	"employer": "Westcor Builders (2003) Inc.",
-    	"dates": "2005 - 2006",
-    	"location": "Regina, SK",
-    	"description": "Managed the administration of the implementation" +
-    		" of Health Benefits; assisted in routine accounting activities;" +
-    		" entered data and maintained a variety of databases; received and" +
-    		" directed telephone calls; produced a variety of documents using" +
-    		" Word and Excel."
-    }],
+    "jobs":
+    [
+        {
+            "title": "Freelance Violist",
+            "employer": "Self-employed",
+            "dates": "1994 - current",
+            "location": ["Regina, SK", " Montreal, QC"],
+            "description": "Performed in numerous chamber ensembles and orchestras" +
+            	" at a wide variety of functions, including many special events" +
+            	" such as the Saskatchewan Centennial Gala (attended by Queen" +
+            	" Elizabeth II) and the 2008 Canadian Country Music Awards;",
+            "url": "http://www.triodacapo.com/"
+        },{
+            "title": "Accounts Receivable Coordinator",
+            "employer": "Globe Union (Canada) Inc.",
+            "dates": "2009 - 2015",
+            "location": "Montreal, QC",
+            "description": "Began as an A/P Coordinator temp via Groom & Associates Staffing" +
+            	" Agency; recruited within a month for a permanent cash" +
+            	" application position - entered invoice payments from 1000" +
+            	" cheques monthly."
+        },{
+        	"title": "Accounts Payable Accounting Clerk",
+        	"employer": "Groom & Associates, Staffing Agency",
+        	"dates": "2008 - 2009",
+        	"location": "Montreal, QC",
+        	"description": "Positioned at Bechtel Corporation, Kitimat Project -" +
+        		" assisted in daily and monthly routine accounting activities; audited" +
+        		" invoices; analyzed and reconciled a variety of documents and data;" +
+        		" created and maintained excel spreadsheets; produced reports;"
+        },{
+            "title": "Section Violist",
+            "employer": "Regina Symphony Orchestra",
+            "dates": "1996 - 2008",
+            "location": "Regina, SK",
+            "description": "Performed in dozens of symphonic, opera, and chamber" +
+            	" concerts every year."
+        },{
+        	"title": "Corporate Legal Assistant",
+        	"employer": "Kanuka Thuringer LLP",
+        	"dates": "2007 - 2008",
+        	"location": "Regina, SK",
+        	"description": "Conducted routine legal services for 1000s of" +
+        		" corporations, ensuring they were all kept up to date and on the" +
+        		" Provincial Register."
+        },{
+        	"title": "General Office Manager",
+        	"employer": "Westcor Builders (2003) Inc.",
+        	"dates": "2005 - 2006",
+        	"location": "Regina, SK",
+        	"description": "Managed the administration of the implementation" +
+        		" of Health Benefits; assisted in routine accounting activities;" +
+        		" entered data and maintained a variety of databases; received and" +
+        		" directed telephone calls; produced a variety of documents using" +
+        		" Word and Excel."
+        }
+    ],
     "display": function() {
         work.jobs.forEach(function(job) {
             $("#workExperience").append(HTMLworkStart);
@@ -145,17 +148,17 @@ var projects = {
         "title": "Fill in the Blanks Quiz",
         "dates": 2016,
         "description": "designed and created an interactive quiz using Python language",
-        "images": ["images/IPND_Quiz2.png"]
+        "images": ["src/images/IPND_Quiz2.png"]
     }, {
         "title": "Movie Trailer Website",
         "dates": 2016,
         "description": "manipulated a Bootstrap- and Python-based template to personalize a website",
-        "images": ["images/IPND_Trailers.png"]
+        "images": ["src/images/IPND_Trailers.png"]
     }, {
         "title": "Multi-Game Tournament",
         "dates": 2016,
         "description": "designed and created a database to organize a multi-game tournament, using PostgreSQL and Python",
-        "images": ["images/IPND_Tournament.png"]
+        "images": ["src/images/IPND_Tournament.png"]
     }],
     "display": function() {
         projects.projects.forEach(function(project) {
@@ -243,6 +246,8 @@ var education = {
 	            var major = HTMLschoolMajor.replace("%data%", school.majors);
 	            $(".education-entry:last").append(major);
             }
+
+            $(".education-entry:last").append("<br>");
         });
 
         $("#education").append("<br>");
@@ -298,7 +303,7 @@ $("#mapDiv").append(googleMap);
 // TODO: add more interactivity - drawing program from Treehouse?
 // TODO: add more interactivity - python interaction for quiz??
 // TODO: add credits! -- "github by Doejo from the Noun Project" icon
-
+// TODO: add favicon!
 
 
 

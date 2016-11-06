@@ -1,0 +1,35 @@
+{
+  "name": "online_resume",
+  "version": "1.0.0",
+  "description": "online resume initially created for Udacity's Front End Nanodegree course",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shamicker/frontend-nanodegree-resume.git"
+  },
+  "keywords": [
+    "udacity",
+    "resume",
+    "project",
+    "front-end"
+  ],
+  "author": "Shauna Kerr",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shamicker/frontend-nanodegree-resume/issues"
+  },
+  "homepage": "https://github.com/shamicker/frontend-nanodegree-resume#readme",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-connect": "^1.0.2",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-jshint": "^1.0.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-postcss": "^0.8.0",
+    "load-grunt-config": "^0.19.2"
+  }
+}
