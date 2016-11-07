@@ -10,9 +10,8 @@ var infoDisplay = function( width, method ) {
     }
 };
 
-var displayFunction = function() {
-
-};
+// var displayFunction = function() {
+// };
 
 
 $(window).resize().text(function() {
