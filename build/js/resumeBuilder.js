@@ -21,38 +21,61 @@ var bio = {
     "welcomeMessage": "Welcome!",
     "skills": ["HTML", "CSS", "Python", "JavaScript"],
     "display": function() {
+
+        // append basics
         var name = HTMLheaderName.replace("%data%", bio.name);
         var role = HTMLheaderRole.replace("%data%", bio.role);
         var biopic = HTMLbioPic.replace("%data%", bio.biopic);
         var message = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
+
         $("#header").prepend(role);
         $("#header").prepend(name);
         $("#header").append(biopic);
         $("#header").append(message);
 
+        // add alt to image
+        $(".biopic").attr("alt", "stylized image of me");
+
+        // put name and role in own div
+        $("#header h1, #header span:first-of-type").wrapAll("<header class='header flex-box'></header>");
+
+    // TODO: make sure all for-in loops loop over objects only! (and check the key)
+
+        // append contact info
         for (var key in bio.contacts) {
             if (bio.contacts.hasOwnProperty(key)) {
-                var item = HTMLcontactGeneric.replace("%data%", bio.contacts[key]).replace("%contact%", "");
+                var item = HTMLcontactGeneric.replace("%contact%", "");
+                var infoDisplay;
 
-            	// append contact info; add attribute
+                // initial window size & content
+                if (window.innerWidth < 700) {
+                    infoDisplay = key;
+                } else {
+                    infoDisplay = bio.contacts[key];
+                }
+
+                item = item.replace("%data%", infoDisplay);
+
+                // append contact info; add attribute
                 $("#topContacts").append(item);
                 $("#footerContacts").append(item);
-            	$(".bright-text").attr("aria-hidden", "true");
+                $(".bright-text").attr("aria-hidden", "true");
 
-            	// add icons
-            	$("#topContacts .bright-text:last").addClass( bio.iconAndLinks[key][0]);
-            	$("#footerContacts .bright-text:last").addClass( bio.iconAndLinks[key][0]);
+                // add icons
+                $("#topContacts .bright-text:last").addClass( bio.iconAndLinks[key][0]);
+                $("#footerContacts .bright-text:last").addClass( bio.iconAndLinks[key][0]);
 
-            	// wrap list items in <a> tags
-            	$("#topContacts .flex-item:last span").wrapAll("<a target='_blank'></a>");
-            	$("#footerContacts .flex-item:last span").wrapAll("<a target='_blank'></a>");
+                // wrap list items in <a> tags
+                $("#topContacts .flex-item:last span").wrapAll("<a class='contact' target='_blank'></a>");
+                $("#footerContacts .flex-item:last span").wrapAll("<a class='contact' target='_blank'></a>");
 
-            	// add hrefs
-            	$("#topContacts a:last").attr("href", bio.iconAndLinks[key][1]);
-            	$("#footerContacts a:last").attr("href", bio.iconAndLinks[key][1]);
+                // add hrefs
+                $("#topContacts a:last").attr("href", bio.iconAndLinks[key][1]);
+                $("#footerContacts a:last").attr("href", bio.iconAndLinks[key][1]);
             }
         }
 
+        // append skills
         if (bio.skills.length > 0) {
             $("#header").append(HTMLskillsStart);
             bio.skills.forEach(function(skill) {
@@ -273,12 +296,14 @@ var education = {
     }
 };
 
+
+
+
 bio.display();
 work.display();
 projects.display();
 education.display();
 
-// add urls to anchor tag hrefs
 
 
 // button to internationalize name
@@ -291,7 +316,7 @@ var inName = function() {
 };
 
 
-$("#mapDiv").append(googleMap);
+// $("#mapDiv").append(googleMap);
 
 
 
