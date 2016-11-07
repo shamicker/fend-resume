@@ -4,7 +4,7 @@
 // get contact display info
 var infoDisplay = function( width, method ) {
     if ( width < 700 ) {
-        return key;
+        return method;
     } else {
         return bio.contacts[method];
     }
@@ -20,8 +20,9 @@ $(window).resize().text(function() {
     var width = $(window).width();
 
     //test on 1 contact method
-    if ( bio.contacts.hasOwnProperty["email"] ) {
+    if ( bio.contacts.hasOwnProperty("email") ) {
         var display = infoDisplay( width, "email" );
+        return display;
     }
 
     // get key for each contact type
@@ -30,5 +31,5 @@ $(window).resize().text(function() {
     //         var display = infoDisplay( width, method );
     //     }
     // }
-    return display;
+
 });

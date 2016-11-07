@@ -6,7 +6,7 @@ module.exports = function(grunt) {
 				"eqeqeq": true,
 				reporterOutput: 'build/report.js'
 			},
-			all: ['gruntfile.js', 'src/js/helper.js', 'src/js/resumeBuilder.js', 'grunt_tasks/*.js']
+			all: ['gruntfile.js', 'src/js/helper.js', 'src/js/resumeBuilder.js', 'src/js/extras.js', 'grunt_tasks/*.js']
 		},
 
 		postcss: {

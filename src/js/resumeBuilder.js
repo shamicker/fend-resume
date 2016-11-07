@@ -17,7 +17,7 @@ var bio = {
     	"location": ["fa fa-street-view", "https://www.google.ca/maps/place/Montreal,+QC/@45.5600397,-73.8524774,11z/data=!3m1!4b1!4m5!3m4!1s0x4cc91a541c64b70d:0x654e3138211fefef!8m2!3d45.5016889!4d-73.567256"],
     	"linkedin": ["fa fa-linkedin", "https://ca.linkedin.com/in/canadian-shauna-kerr"]
     },
-    "biopic": "build/images/sketch.jpg",
+    "biopic": "build/images/hipster_logo_cropped.png",
     "welcomeMessage": "Welcome!",
     "skills": ["HTML", "CSS", "Python", "JavaScript"],
     "display": function() {
