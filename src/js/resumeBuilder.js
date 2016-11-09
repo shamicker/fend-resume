@@ -56,22 +56,19 @@ var bio = {
 
                 item = item.replace("%data%", infoDisplay);
 
-                // append contact info; add attribute
-                $("#topContacts").append(item);
-                $("#footerContacts").append(item);
+                // append contact info; add aria attribute
+                $("#topContacts, #footerContacts").addClass("contactList").append(item);
                 $(".bright-text").attr("aria-hidden", "true");
 
                 // add icons
-                $("#topContacts .bright-text:last").addClass( bio.iconAndLinks[key][0]);
-                $("#footerContacts .bright-text:last").addClass( bio.iconAndLinks[key][0]);
+                $("#topContacts .bright-text:last, #footerContacts .bright-text:last").addClass( bio.iconAndLinks[key][0]);
 
-                // wrap list items in <a> tags
+                // wrap list items in <a> tags (to make them links)
                 $("#topContacts .flex-item:last span").wrapAll("<a class='contact' target='_blank'></a>");
                 $("#footerContacts .flex-item:last span").wrapAll("<a class='contact' target='_blank'></a>");
 
-                // add hrefs
-                $("#topContacts a:last").attr("href", bio.iconAndLinks[key][1]);
-                $("#footerContacts a:last").attr("href", bio.iconAndLinks[key][1]);
+                // add hrefs (links)
+                $("#topContacts a:last, #footerContacts a:last").attr("href", bio.iconAndLinks[key][1]);
             }
         }
 
