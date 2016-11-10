@@ -40,8 +40,8 @@ module.exports = function(grunt) {
         tasks: ['watch']
       },
       css: {
-        files: ['src/css/*.css'],
-        tasks: ['postcss']
+        files: ['src/css/style.css'],
+        tasks: ['concat', 'postcss']
       }
     }
 

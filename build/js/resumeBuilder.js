@@ -9,38 +9,38 @@ var bio = {
         "location": "Montreal, QC",
         "linkedin": "canadian-shauna-kerr"
     },
-    "iconAndLinks": {
-    	"email": ["fa fa-at", "mailto:shauna.kerr@gmail.com"],
-    	"github": ["fa fa-github", "https://github.com/shamicker"],
-    	// "twitter": ["", ""],
-    	"mobile": ["fa fa-phone", "https://en.wikipedia.org/wiki/Emma_Nutt"],
-    	"location": ["fa fa-street-view", "https://www.google.ca/maps/place/Montreal,+QC/@45.5600397,-73.8524774,11z/data=!3m1!4b1!4m5!3m4!1s0x4cc91a541c64b70d:0x654e3138211fefef!8m2!3d45.5016889!4d-73.567256"],
-    	"linkedin": ["fa fa-linkedin", "https://ca.linkedin.com/in/canadian-shauna-kerr"]
-    },
     "biopic": "build/images/hipster_logo_cropped.png",
-    "welcomeMessage": "Welcome!",
+    "welcomeMessage": "Hi, my name is Shauna. I am a student and an alumna of <a class='text-link' href='https://www.udacity.com/us' target='_blank'>Udacity</a>, an online education website. This is just the beginning of my coding adventures! Currently my plan is to learn front-end and then back-end web development, and then continue on learning from there.",
     "skills": ["HTML", "CSS", "Python", "JavaScript"],
+    "iconAndLinks": {
+        "email": ["fa fa-at", "mailto:shauna.kerr@gmail.com"],
+        "github": ["fa fa-github", "https://github.com/shamicker"],
+        // "twitter": ["", ""],
+        "mobile": ["fa fa-phone", "https://en.wikipedia.org/wiki/Emma_Nutt"],
+        "location": ["fa fa-street-view", "https://www.google.ca/maps/place/Montreal,+QC/@45.5600397,-73.8524774,11z/data=!3m1!4b1!4m5!3m4!1s0x4cc91a541c64b70d:0x654e3138211fefef!8m2!3d45.5016889!4d-73.567256"],
+        "linkedin": ["fa fa-linkedin", "https://ca.linkedin.com/in/canadian-shauna-kerr"]
+    },
+    "welcomeLink": '<a class="text-link" href="https://www.udacity.com/us" target="_blank">Udacity</a>',
     "display": function() {
 
         // append basics
         var name = HTMLheaderName.replace("%data%", bio.name);
         var role = HTMLheaderRole.replace("%data%", bio.role);
         var biopic = HTMLbioPic.replace("%data%", bio.biopic);
-        var message = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
+        var message = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage).replace("span", "p");
 
         $("#header").prepend(role);
         $("#header").prepend(name);
         $("#header").append(biopic);
         $("#header").append(message);
 
-        // add alt to image
+        // add alt to biopic
         $(".biopic").attr("alt", "stylized image of me");
 
         // put name and role in own div
         $("#header h1, #header span:first-of-type").wrapAll("<header class='header flex-box'></header>");
 
-    // TODO: make sure all for-in loops loop over objects only! (and check the key)
-
+        // TODO: make sure all for-in loops loop over objects only! (and check the key)
         // append contact info
         for (var key in bio.contacts) {
             if (bio.contacts.hasOwnProperty(key)) {
@@ -58,10 +58,10 @@ var bio = {
 
                 // append contact info; add aria attribute
                 $("#topContacts, #footerContacts").addClass("contactList").append(item);
-                $(".bright-text").attr("aria-hidden", "true");
+                $(".gold-text").attr("aria-hidden", "true");
 
                 // add icons
-                $("#topContacts .bright-text:last, #footerContacts .bright-text:last").addClass( bio.iconAndLinks[key][0]);
+                $("#topContacts .gold-text:last, #footerContacts .gold-text:last").addClass( bio.iconAndLinks[key][0]);
 
                 // wrap list items in <a> tags (to make them links)
                 $("#topContacts .flex-item:last span").wrapAll("<a class='contact' target='_blank'></a>");
@@ -72,8 +72,13 @@ var bio = {
             }
         }
 
-        // append skills
+        // wrap biopic, skills, welcome in divs
+        $(".biopic, .welcome-message, #skills-h3, #skills").wrapAll("<div class='flex-box first-glance'></div>");
+        // TODO: Figure out why the IDs aren't included
+
+        // append <hr> and skills
         if (bio.skills.length > 0) {
+            $("#header").append("<hr>");
             $("#header").append(HTMLskillsStart);
             bio.skills.forEach(function(skill) {
                 var formattedSkill = HTMLskills.replace(
@@ -145,6 +150,7 @@ var work = {
     "display": function() {
         work.jobs.forEach(function(job) {
             $("#workExperience").append(HTMLworkStart);
+            $(".work-entry").addClass("flex-box");
 
             var employer = HTMLworkEmployer.replace("%data%",
                 job.employer);
@@ -160,6 +166,11 @@ var work = {
             $(".work-entry:last").append(location);
             $(".work-entry:last").append(description);
         });
+
+        // remove <br>, wrap link in h4, add class to <a>
+        $(".work-entry p br").remove();
+        $(".work-entry a").wrap("<h4></h4>");
+        $(".work-entry h4 a").addClass("header-link");
     }
 };
 
@@ -183,6 +194,7 @@ var projects = {
     "display": function() {
         projects.projects.forEach(function(project) {
             $("#projects").append(HTMLprojectStart);
+            $(".project-entry").addClass("flex-box");
 
             var title = HTMLprojectTitle.replace("%data%",
                 project.title);
@@ -201,6 +213,11 @@ var projects = {
                 $(".project-entry:last").append(image);
             });
         });
+
+        // remove <br>, wrap link in h4, add class to <a>
+        $(".project-entry p br").remove();
+        $(".project-entry a").wrap("<h4></h4>");
+        $(".project-entry h4 a").addClass("header-link");
     }
 };
 
@@ -290,6 +307,14 @@ var education = {
             	$(".education-entry:last a").attr("href", course.url);
             }
         });
+
+        // Make flexy
+        $(".education-entry").addClass("flex-box");
+
+        // remove <br>, wrap link in h4, add class to <a>
+        $(".education-entry p br").remove();
+        $(".education-entry a").wrap("<h4></h4>");
+        $(".education-entry h4 a").addClass("header-link");
     }
 };
 

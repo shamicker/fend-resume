@@ -21,8 +21,8 @@ module.exports = function(grunt) {
     // 'imageoptim',
     'copy',
     // 'sass',
+    'concat',
     'postcss',
-    // 'concat',
     // 'csslint',
     // 'copy'
     // 'pagespeed',

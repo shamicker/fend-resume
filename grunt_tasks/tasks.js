@@ -9,6 +9,21 @@ module.exports = function(grunt) {
 			all: ['gruntfile.js', 'src/js/helper.js', 'src/js/resumeBuilder.js', 'src/js/extras.js', 'grunt_tasks/*.js']
 		},
 
+		concat: {
+			options: {
+				separator: ';\n'
+			// },
+			// js: {
+			// 	src: ['src/js/*.js'],
+			// 	dest: 'build/js/all.js',
+			// 	nonull: true
+			},
+			css: {
+				src: ['src/css/normalize.css', 'src/css/style.css'],
+				dest: 'src/css/concat.css'
+			}
+		},
+
 		postcss: {
 			autoprefix: {
 				options: {
@@ -16,10 +31,10 @@ module.exports = function(grunt) {
 					processors: [require('autoprefixer')({browsers: 'last 2 versions'})]
 					// map: true
 				},
-				src: ['src/css/*.css'],
+				src: ['src/css/concat.css'],
 				dest: 'build/css/style.css'
 			},
-			minify: {
+			cssnano: {
 				options: {
 					// diff: 'build/css/report2.css',
 					processors: [require('cssnano')()]
@@ -27,17 +42,6 @@ module.exports = function(grunt) {
 				src: ["<%= postcss.autoprefix.dest %>"],
 				dest: 'build/css/style.css'
 			}
-		// },
-
-		// concat: {
-		// 	options: {
-		// 		separator: ';\n'
-		// 	},
-		// 	dist: {
-		// 		src: ['src/js/*.js'],
-		// 		dest: 'build/js/all.js',
-		// 		nonull: true
-		// 	}
 		}
 
 	});
