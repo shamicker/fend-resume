@@ -56,30 +56,89 @@
 // });
 
 // ***************************************************************
-function infoDisplay() {
-    var contactInfo = bio.contacts;
+// function infoDisplay() {
+//     var contactInfo = bio.contacts;
 
-    contactInfo = $.map( contactInfo, function( value, key ) {
-        // for each DOM element
-        $("#topContacts li span:last-child").map( function( index ) {
+//     contactInfo = $.map( contactInfo, function( value, key ) {
+//         // for each DOM element
+//         $("#topContacts li span:last-child").map( function( ) {
 
-            // get display info
-            var display;
-            if (window.innerWidth < 700) {
-                display = key;
-            } else {
-                display = value;
-            }
+//             // get display info
+//             var display;
+//             if (window.innerWidth < 700) {
+//                 display = key;
+//             } else {
+//                 display = value;
+//             }
 
-            // console.log(index, key, value);
-            console.log(display);
-            // return display;
-        });
+//             // console.log(index, key, value);
+//             console.log(display);
+//             // return this.display;
+//         });
 
-    });
-}
+//     });
+// }
 
 
+
+// **************************************************************
+
+// items to be mapped/ replaced
+var mappedItems = $("#topContacts li span:last-child").map( function(index) {
+
+    var replacementList = $("#topContacts li span:last-child").text( $(this).text() ).get(0);
+    console.log("list is " + replacementList);
+    // console.log(replacementList.length);
+
+    console.log("replacementList = " + replacementList);
+    // console.log("repl[0] is " + replacementList[0]);
+    // var ex;
+
+    var toDisplay, key;
+    // if index === 0, key is email
+    // if index === 1, key is github
+    // if index === 2, key is phone
+    // if index === 3, key is location
+    // if index === 4, key is linkedin
+    // OR, for index 0-4, key is $(mediaType).text()
+    // where mediaType = $("#topContacts li span:last-child").text( $(this).text() ); ?
+    // for (i=0; i < replacementList.length; i++) {
+
+    // }
+    console.log("toDisplay and key: " + toDisplay+key);
+
+    if ( index === 0 ) {
+        key = "email";
+    console.log("toDisplay and key: " + toDisplay+key);
+    } else if ( index === 1 ) {
+        key = "github";
+    } else if ( index === 2 ) {
+        key = 'mobile';
+    } else if ( index === 3 ) {
+        key = 'location';
+    } else if ( index === 4 ) {
+        key = 'linkedin';
+    } else {
+        key = "whoops";
+    }
+    // get display info
+    if (window.innerWidth < 700) {
+        toDisplay = key;
+    } else {
+        toDisplay = bio.contacts[key];
+    }
+        console.log("toDisplay and key: " + toDisplay+key);
+
+    // console.log("toDisplay" + index + " is " + toDisplay);
+    // console.log(toDisplay);
+    return toDisplay;
+
+});
+console.log("mappedItems");
+console.log(mappedItems);
+// Now that items are mapped, put them back in the DOM appropriately!
+// $("#topContacts li span:last-child").text( mappedItems );
+ // $("#topContacts li span:last-child").each().text(  mappedItems[0] );
 
 
 
@@ -87,7 +146,9 @@ function infoDisplay() {
 
 
 // window event listener!!
-window.onresize = infoDisplay;
+window.onresize = $("#topContacts li span:last-child").text( function(index) {
+    return mappedItems[index];
+});
 
 
 

@@ -51,7 +51,6 @@ h2 {
   font-size: 24px;
   color: goldenrod;
   line-height: 29px;
-  padding: 10px;
 }
 
 h3 {
@@ -92,17 +91,20 @@ hr {
   border: 1px groove whitesmoke;
 }
 
-p {
+p,
+figcaption {
   font-size: 14px;
   color: dimgrey;
   line-height: 21px;
   /*padding: 5px;*/
+  width: 100%;
 }
 
 a, button {
   color: #5d4e60;
   text-decoration: none;
   min-height: 48px;
+  cursor: pointer;
 }
 
 ul {
@@ -138,6 +140,7 @@ span {
   font-size: 14px;
   color: dimgrey;
   line-height: 16px;
+  padding: 2px 4px 0 0;
 }
 
 .location-text {
@@ -181,7 +184,7 @@ span {
 .flex-column {
   display: -ms-flexbox;
   display: flex;
-  width: 100%;
+  /*width: 100%;*/
   /*padding: 10px;*/
 }
 
@@ -224,16 +227,26 @@ span {
   font-style: italic;
 }
 
-
-/**************************************************
- * HEADER
- **************************************************/
+/*********************************************************************
+ * LAYOUT ***********************************************************/
 
 #header {
   padding: 5%;
   background: dimgrey;
   /*background: dimgrey url(./../../src/images/transparent\ textures/rocky-wall.png);*/
 }
+
+#workExperience,
+#projects,
+#education {
+  padding: 5%;
+}
+
+
+
+/**************************************************
+ * HEADER
+ **************************************************/
 
 .header {
   /*padding: 0;*/
@@ -283,21 +296,24 @@ with skills?
 
 
 /*************************************************
- * SECTIONS
+ * JOBS
+ * PROJECTS
+ * EDUCATION
  *************************************************/
 
 .work-entry,
 .project-entry,
 .education-entry {
   margin: 10px auto;
-  max-width: 90%;
-  /*border: 1px solid dimgrey;*/
-  padding: 5px;
+  border: 1px solid dimgrey;
   justify-content: space-between;
+  padding: 3px;
+}
+.work-entry:first-of-type {
+  margin-top: 0;
 }
 
 .work-entry p,
-.project-entry p,
 .education-entry p {
   border-top: 1px solid dimgrey;
 }
@@ -306,11 +322,17 @@ with skills?
   margin-top: 0;
 }
 
-.project-entry > img {
+.project-entry > figure {
+  width: 100%;
+  /*height: 125px;*/
+  /*border-top: 1px solid dimgrey;*/
+  margin: 0;
+}
+
+.project-entry img {
   max-width: 100%;
-  height: 125px;
-  border: 2px solid goldenrod;
-  border-radius: 10px;
+  /*border-radius: 10px;*/
+  /*height*/
 }
 
 
