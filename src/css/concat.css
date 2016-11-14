@@ -697,11 +697,6 @@ span {
   /*background: dimgrey url(./../../src/images/transparent\ textures/rocky-wall.png);*/
 }
 
-#workExperience,
-#projects,
-#education {
-  padding: 5%;
-}
 
 
 
@@ -762,13 +757,25 @@ with skills?
  * EDUCATION
  *************************************************/
 
+/*
+TODO: create "hamburger menu" to hide all
+but headers of WorkExperience, projects & education
+*/
+
+#workExperience,
+#projects,
+#education {
+  padding: 10px 5%;
+}
+
 .work-entry,
 .project-entry,
 .education-entry {
   margin: 10px auto;
   border: 1px solid dimgrey;
   justify-content: space-between;
-  padding: 3px;
+  padding: 3px; /*inside each entry*/
+  max-width: calc(600px - 10vw);
 }
 .work-entry:first-of-type {
   margin-top: 0;

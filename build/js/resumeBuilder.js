@@ -171,6 +171,8 @@ var work = {
     $(".work-entry p br").remove();
     $(".work-entry a").wrap("<h4></h4>");
     $(".work-entry h4 a").addClass("header-link");
+    // to make toggling better, wrap entries in a div
+    $(".work-entry").wrapAll("<div class='work-toggle'></div>");
   }
 };
 
@@ -345,6 +347,31 @@ var inName = function() {
 };
 
 
+// work/project/edu section toggling
+var workHeader = document.querySelector("#workExperience h2");
+var workEntries = document.querySelector(".work-toggle");
+
+workHeader.addEventListener("click", function(e) {
+  if ($(workHeader).is(":hidden") ) {
+    $(workEntries).slideDown("slow");
+  } else if ($(workHeader).is(":visible") ) {
+    $(workEntries).slideUp("slow");
+  }
+  // workEntries.slideDown('slow');
+});
+// workHeader.addEventListener("click", function(e) {
+//   workEntries.slideUp('slow');
+// });
+
+
+
+// $(workHeader).click(function() {
+//   if ($(workHeader).is(":hidden") ) {
+//     $(workEntries).slideDown("slow");
+//   } else {
+//     $(workEntries).slideUp("slow");
+//   }
+// });
 // $("#mapDiv").append(googleMap);
 
 
