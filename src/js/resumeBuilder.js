@@ -9,9 +9,9 @@ var bio = {
     "location": "Montreal, QC",
     "linkedin": "canadian-shauna-kerr"
   },
-  "biopic": "build/images/hipster_logo_cropped.png",
-  // "welcomeMessage": "Hi, my name is Shauna. I am a student and an alumna of <a class='text-link' href='https://www.udacity.com/us'>Udacity</a>, an online education website. This is just the beginning of my coding adventures! Currently my plan is to learn front-end and then back-end web development, and then continue on learning from there.",
-  "welcomeMessage": "Welcome!",
+  // "biopic": "build/images/hipster_logo_cropped.png",
+  "biopic": "build/images/sketch.jpg",
+  "welcomeMessage": "I am a student and an alumna of <a class='text-link' href='https://www.udacity.com/us'>Udacity</a>, an online education website. This is just the beginning of my coding adventures! My plan is to learn front-end and then back-end web development, and then continue on learning from there.",
   "skills": ["HTML", "CSS", "Python", "JavaScript"],
   "iconAndLinks": {
     "email": ["fa fa-at", "mailto:shauna.kerr@gmail.com"],
@@ -54,7 +54,7 @@ var bio = {
           infoDisplay = bio.contacts[key];
         }
 
-        item = item.replace("%data%", infoDisplay);
+        item = item.replace("%data%", infoDisplay).replace("%className%", key);
 
         // append contact info; add aria attribute
         $("#topContacts, #footerContacts").addClass("contactList").append(item);
@@ -171,8 +171,12 @@ var work = {
     $(".work-entry p br").remove();
     $(".work-entry a").wrap("<h4></h4>");
     $(".work-entry h4 a").addClass("header-link");
+
     // to make toggling better, wrap entries in a div
-    $(".work-entry").wrapAll("<div class='work-toggle'></div>");
+    $(".work-entry").wrapAll("<div class='work-toggle toggle'></div>");
+
+    // add class to h2
+    $("#workExperience h2").addClass("work-heading");
   }
 };
 
@@ -222,9 +226,14 @@ var projects = {
 
     // remove <br>
     $(".project-entry figcaption br").remove();
+
     // make header link, and style it
     $(".project-entry a").wrap("<h4></h4>");
     $(".project-entry h4 a").addClass("header-link");
+    $(".project-entry").wrapAll("<div class='project-toggle toggle'></div>");
+
+    // add class to h2
+    $("#projects h2").addClass("project-heading");
   }
 };
 
@@ -322,6 +331,12 @@ var education = {
     $(".education-entry p br").remove();
     $(".education-entry a").wrap("<h4></h4>");
     $(".education-entry h4 a").addClass("header-link");
+
+    // add toggle div - around edu, and online
+    $(".education-entry, #education h3").wrapAll("<div class='education-toggle toggle'></div>");
+
+    // add class to h2
+    $("#education h2").addClass("education-heading");
   }
 };
 
@@ -338,7 +353,7 @@ education.display();
 
 
 // button to internationalize name
-$("#main").append(internationalizeButton);
+// $("#main").append(internationalizeButton);
 var inName = function() {
   var names = bio.name.split(" ");
   names = names[0].slice(0, 1).toUpperCase() + names[0].slice(1).toLowerCase() +
@@ -347,32 +362,20 @@ var inName = function() {
 };
 
 
-// work/project/edu section toggling
-var workHeader = document.querySelector("#workExperience h2");
-var workEntries = document.querySelector(".work-toggle");
-
-workHeader.addEventListener("click", function(e) {
-  if ($(workHeader).is(":hidden") ) {
-    $(workEntries).slideDown("slow");
-  } else if ($(workHeader).is(":visible") ) {
-    $(workEntries).slideUp("slow");
+// Show and hide work, projects, education sections
+$("h2").on("click", function() {
+  var toToggle = $(this).siblings(".toggle");
+  if ( toToggle.is(":hidden") ) {
+    toToggle.slideDown("slow");
+  } else {
+    toToggle.slideUp("slow");
   }
-  // workEntries.slideDown('slow');
 });
-// workHeader.addEventListener("click", function(e) {
-//   workEntries.slideUp('slow');
-// });
 
-
-
-// $(workHeader).click(function() {
-//   if ($(workHeader).is(":hidden") ) {
-//     $(workEntries).slideDown("slow");
-//   } else {
-//     $(workEntries).slideUp("slow");
-//   }
-// });
-// $("#mapDiv").append(googleMap);
+// Show map
+$("#mapDiv").append(googleMap);
+// Give toggle-able class
+$("#map").addClass("map-toggle toggle");
 
 
 

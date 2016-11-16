@@ -568,6 +568,10 @@ a, button {
   cursor: pointer;
 }
 
+button {
+  width: 90%;
+}
+
 ul {
   list-style: none;
 }
@@ -670,7 +674,8 @@ span {
 }
 
 .text-link {
-  color: lavender;
+  color: goldenrod;
+  /*font-style: normal;*/
 }
 
 .text-link:hover {
@@ -734,7 +739,7 @@ with skills?
 }
 
 .biopic {
-  padding: 5%;
+  /*padding: 5%;*/
   /*float: left;*/
   margin: 5%;
   /*max-height: 100%;*/
@@ -742,7 +747,9 @@ with skills?
   max-width: 200px;
   max-height: 150px;
   /*display: none;*/
-  border-radius: 10px;
+  border-radius: 30px;
+  /*border: 3px solid #5d4e60;*/
+  border: 1px dotted goldenrod;
 }
 
 #skills-h3 {
@@ -764,8 +771,13 @@ but headers of WorkExperience, projects & education
 
 #workExperience,
 #projects,
-#education {
+#education,
+#mapDiv {
   padding: 10px 5%;
+}
+
+.toggle {
+  display: none;
 }
 
 .work-entry,
@@ -803,25 +815,17 @@ but headers of WorkExperience, projects & education
   /*height*/
 }
 
-
 /**************************************************
  * FOOTER & MAP
  **************************************************/
 
+.map-toggle {
+  height: 400px;
+  margin: 3% 10% 5%;
+}
+
 #lets-connect {
   text-align: center;
-}
-
-#map {
-  display: block;
-  height: 100%;
-  margin: 0 10%;
-}
-
-#mapDiv {
-  height: 400px;
-  width: 100%;
-  padding-bottom: 5%;
 }
 
 /**************************************************
