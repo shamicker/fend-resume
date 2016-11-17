@@ -579,7 +579,6 @@ ul {
 li > a,
 #skills li {
   display: flex;
-  padding: 1px;
   align-items: center;
 }
 
@@ -619,11 +618,13 @@ span {
 
 .fa {
   line-height: 16px;
+  /*min-width: 48px;*/
 }
 
 .white-text {
   font-weight: 700;
   color: whitesmoke;
+  /*padding: 0;*/
 }
 
 .gray {

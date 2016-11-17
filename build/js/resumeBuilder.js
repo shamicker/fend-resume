@@ -14,12 +14,12 @@ var bio = {
   "welcomeMessage": "I am a student and an alumna of <a class='text-link' href='https://www.udacity.com/us'>Udacity</a>, an online education website. This is just the beginning of my coding adventures! My plan is to learn front-end and then back-end web development, and then continue on learning from there.",
   "skills": ["HTML", "CSS", "Python", "JavaScript"],
   "iconAndLinks": {
-    "email": ["fa fa-at", "mailto:shauna.kerr@gmail.com"],
-    "github": ["fa fa-github", "https://github.com/shamicker"],
+    "email": ["fa-at", "mailto:shauna.kerr@gmail.com"],
+    "github": ["fa-github", "https://github.com/shamicker"],
     // "twitter": ["", ""],
-    "mobile": ["fa fa-phone", "https://en.wikipedia.org/wiki/Emma_Nutt"],
-    "location": ["fa fa-street-view", "https://www.google.ca/maps/place/Montreal,+QC/@45.5600397,-73.8524774,11z/data=!3m1!4b1!4m5!3m4!1s0x4cc91a541c64b70d:0x654e3138211fefef!8m2!3d45.5016889!4d-73.567256"],
-    "linkedin": ["fa fa-linkedin", "https://ca.linkedin.com/in/canadian-shauna-kerr"]
+    "mobile": ["fa-phone", "https://en.wikipedia.org/wiki/Emma_Nutt"],
+    "location": ["fa-street-view", "https://www.google.ca/maps/place/Montreal,+QC/@45.5600397,-73.8524774,11z/data=!3m1!4b1!4m5!3m4!1s0x4cc91a541c64b70d:0x654e3138211fefef!8m2!3d45.5016889!4d-73.567256"],
+    "linkedin": ["fa-linkedin", "https://ca.linkedin.com/in/canadian-shauna-kerr"]
   },
   "display": function() {
 
@@ -29,10 +29,10 @@ var bio = {
     var biopic = HTMLbioPic.replace("%data%", bio.biopic);
     var message = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage).replace("span", "p");
 
+    $("#header").prepend(message);
+    $("#header").prepend(biopic);
     $("#header").prepend(role);
     $("#header").prepend(name);
-    $("#header").append(biopic);
-    $("#header").append(message);
 
     // add alt to biopic
     $(".biopic").attr("alt", "stylized image of me");
@@ -46,9 +46,13 @@ var bio = {
       if (bio.contacts.hasOwnProperty(key)) {
         var item = HTMLcontactGeneric.replace("%contact%", "");
         var infoDisplay;
+        var icon = "fa " + bio.iconAndLinks[key][0];
 
-        // initial window size & content
-        if (window.innerWidth < 700) {
+        // initial window size & contact display
+        if (window.innerWidth < 350) {
+          icon = icon + " fa-lg";
+          infoDisplay = "";
+        } else if (window.innerWidth < 500) {
           infoDisplay = key;
         } else {
           infoDisplay = bio.contacts[key];
@@ -57,17 +61,15 @@ var bio = {
         item = item.replace("%data%", infoDisplay).replace("%className%", key);
 
         // append contact info; add aria attribute
-        $("#topContacts, #footerContacts").addClass("contactList").append(item);
+        $("#topContacts, #footerContacts").append(item);
         $(".gold-text").attr("aria-hidden", "true");
 
         // add icons
-        $("#topContacts .gold-text:last, #footerContacts .gold-text:last").addClass( bio.iconAndLinks[key][0]);
+        $("#topContacts .gold-text:last, #footerContacts .gold-text:last").addClass( icon );
 
-        // wrap list items in <a> tags (to make them links)
+        // wrap contact info in <a> tags; add hrefs (links)
         $("#topContacts .flex-item:last span").wrapAll("<a class='contact'></a>");
         $("#footerContacts .flex-item:last span").wrapAll("<a class='contact'></a>");
-
-        // add hrefs (links)
         $("#topContacts a:last, #footerContacts a:last").attr("href", bio.iconAndLinks[key][1]);
       }
     }
@@ -78,7 +80,7 @@ var bio = {
 
     // append <hr> and skills
     if (bio.skills.length > 0) {
-      $("#header").append("<hr>");
+      $("#topContacts").before("<hr>");
       $("#header").append(HTMLskillsStart);
       bio.skills.forEach(function(skill) {
         var formattedSkill = HTMLskills.replace(
