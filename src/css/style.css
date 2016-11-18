@@ -236,18 +236,15 @@ span {
 /*********************************************************************
  * LAYOUT ***********************************************************/
 
+/**************************************************
+ * HEADER
+ **************************************************/
+
 #header {
   padding: 5%;
   background: dimgrey;
   /*background: dimgrey url(./../../src/images/transparent\ textures/rocky-wall.png);*/
 }
-
-
-
-
-/**************************************************
- * HEADER
- **************************************************/
 
 .header {
   /*padding: 0;*/
@@ -360,6 +357,8 @@ but headers of WorkExperience, projects & education
  **************************************************/
 
 .map-toggle {
+  /*border: 1px solid orange;*/
+  display: block;
   height: 400px;
   margin: 3% 10% 5%;
 }
