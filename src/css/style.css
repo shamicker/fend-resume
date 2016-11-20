@@ -129,6 +129,10 @@ span {
 * MODULES
 **************************************************/
 
+.centered {
+  margin: 0 auto;
+}
+
 .center-content {
   padding: 2.5% 5%;
 }
@@ -357,10 +361,18 @@ but headers of WorkExperience, projects & education
  **************************************************/
 
 .map-toggle {
-  /*border: 1px solid orange;*/
+  margin: 0 10% 5%;
+}
+
+.map-toggle h4 {
+  min-height: 0;
+  font-style: italic;
+  /*color: #5d4e60;*/
+}
+
+#map {
   display: block;
   height: 400px;
-  margin: 3% 10% 5%;
 }
 
 #lets-connect {

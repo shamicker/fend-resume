@@ -63,7 +63,7 @@ var HTMLonlineDates = '<div class="date-text">%data%</div>';
 var HTMLonlineURL = '<br><a href="#">%data%</a>';
 
 var internationalizeButton = '<button>Internationalize My Name</button>';
-var googleMap = '<div id="map"></div>';
+var googleMap = "<div class='map-toggle toggle'><h4>Where I've Lived and Worked</h4><div id='map'></div></div>";
 
 
 /*
@@ -106,6 +106,7 @@ https://developers.google.com/maps/documentation/javascript/reference
 */
 var map; // declares a global map variable
 
+var infoWindow = new google.maps.InfoWindow();
 
 /*
 Start here! initializeMap() is called when page is loaded.
@@ -167,8 +168,10 @@ function initializeMap() {
     var lat = placeData.geometry.location.lat(); // latitude from the place service
     var lon = placeData.geometry.location.lng(); // longitude from the place service
     var name = placeData.formatted_address; // name of the place from the place service
+    var photo = placeData.photos; // photos of the place from the place service
     var bounds = window.mapBounds; // current boundaries of the map window
 
+    photo = photo[0].getUrl({'maxWidth':150,'maxHeight':150});
     // marker is an object with additional data about the pin for a single location
     var marker = new google.maps.Marker({
       map: map,
@@ -179,14 +182,14 @@ function initializeMap() {
     // infoWindows are the little helper windows that open when you click
     // or hover over a pin on a map. They usually contain more information
     // about a location.
-    var infoWindow = new google.maps.InfoWindow({
-      content: name
-    });
+    // var infoWindow = new google.maps.InfoWindow({
+    //   content: name
+    // });
 
     // hmmmm, I wonder what this is about...
     google.maps.event.addListener(marker, 'click', function() {
-      // your code goes here!
-      // TODO: make pretty mapMarkers
+      infoWindow.setContent(name + "<br><img class='centered' src='" + photo + "'>" );
+      infoWindow.open(map, marker);
     });
 
     // this is where the pin actually gets added to the map.
@@ -247,8 +250,15 @@ function initializeMap() {
 Uncomment the code below when you're ready to implement a Google Map!
 */
 
+
 // Calls the initializeMap() function when the page loads
 window.addEventListener('load', initializeMap);
+
+// for when map is initially hidden
+// function displayMap() {
+  // document.getElementbyID("map").style.display="block";
+  // initializeMap();
+// }
 
 // // Vanilla JS way to listen for resizing of the window
 // // and adjust map bounds

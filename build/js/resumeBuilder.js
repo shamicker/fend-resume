@@ -11,7 +11,7 @@ var bio = {
   },
   // "biopic": "build/images/hipster_logo_cropped.png",
   "biopic": "build/images/sketch.jpg",
-  "welcomeMessage": "I am a student and an alumna of <a class='text-link' href='https://www.udacity.com/us'>Udacity</a>, an online education website. This is just the beginning of my coding adventures! My plan is to learn front-end and then back-end web development, and then continue on learning from there.",
+  "welcomeMessage": "As a student and alumna of <a class='text-link' href='https://www.udacity.com/us'>Udacity</a>, an online education website, I am just beginning my coding adventures! My plan is to learn front-end and then back-end web development, and then continue on learning from there.",
   "skills": ["HTML", "CSS", "Python", "JavaScript"],
   "iconAndLinks": {
     "email": ["fa-at", "mailto:shauna.kerr@gmail.com"],
@@ -92,9 +92,7 @@ var bio = {
 };
 
 var work = {
-  "jobs":
-  [
-    {
+  "jobs":[{
       "title": "Freelance Violist",
       "employer": "Self-employed",
       "dates": "1994 - current",
@@ -147,8 +145,7 @@ var work = {
       " entered data and maintained a variety of databases; received and" +
       " directed telephone calls; produced a variety of documents using" +
       " Word and Excel."
-    }
-  ],
+    }],
   "display": function() {
     work.jobs.forEach(function(job) {
       $("#workExperience").append(HTMLworkStart);
@@ -246,8 +243,8 @@ var education = {
     "dates": 2016,
     "description": "",
     "url": "https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001?v=fe1",
-    "displayURL": "www.udacity.com"
-  }, {
+    "displayURL": "www.udacity.com/fend/"
+  },{
     "school": "Udacity",
     "title": "Introduction to Programming Nanodegree",
     "dates": 2016,
@@ -256,7 +253,7 @@ var education = {
       " PostgreSQL, Bootstrap; completed projects, both from scratch and" +
       " from templates, using all of the aforementioned knowledge and more.",
     "url": "https://www.udacity.com/course/intro-to-programming-nanodegree--nd000#project_modal_3568138824",
-    "displayURL": "www.udacity.com"
+    "displayURL": "www.udacity.com/ipnd/"
   }],
   "schools": [{
     "name": "University of Regina",
@@ -266,7 +263,7 @@ var education = {
     "dates": 2007,
     "description": "Awarded the 'Canadian Millennium Scholarship Foundation Bursary' for the highest GPA within the Faculty of Arts.",
     "url": "http://lacite.uregina.ca/en/study-here/academics/undergraduate-programs/certificate-in-french-as-a-second-language"
-  }, {
+  },{
     "name": "University of Regina",
     "location": "Regina, SK",
     "degree": "Bachelor of Music",
@@ -364,21 +361,23 @@ var inName = function() {
 };
 
 
-// Show and hide work, projects, education sections
+// Show and hide sections
 $("h2").on("click", function() {
   var toToggle = $(this).siblings(".toggle");
   if ( toToggle.is(":hidden") ) {
-    toToggle.slideDown("slow");
+    if ( $(this).siblings(".toggle")[0] === toToggle[0] ) {
+      toToggle.slideDown("slow", initializeMap );
+    } else {
+      toToggle.slideDown("slow");
+    }
   } else {
     toToggle.slideUp("slow");
   }
 });
 
-// Show map
+// Map alterations
 $("#mapDiv").append(googleMap);
-// Give toggle-able class
-$("#map").addClass("map-toggle toggle");
-
+$("#mapDiv h2").text("Locations");
 
 
 // TODO: add url to all <a> href's
