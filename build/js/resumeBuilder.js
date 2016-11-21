@@ -101,7 +101,7 @@ var work = {
         " at a wide variety of functions, including many special events" +
         " such as the Saskatchewan Centennial Gala (attended by Queen" +
         " Elizabeth II) and the 2008 Canadian Country Music Awards;",
-      "url": "http://www.triodacapo.com/"
+      "url": "https://www.triodacapo.com/"
     },{
       "title": "Accounts Receivable Coordinator",
       "employer": "Globe Union (Canada) Inc.",
@@ -262,14 +262,14 @@ var education = {
     "majors": "",
     "dates": 2007,
     "description": "Awarded the 'Canadian Millennium Scholarship Foundation Bursary' for the highest GPA within the Faculty of Arts.",
-    "url": "http://lacite.uregina.ca/en/study-here/academics/undergraduate-programs/certificate-in-french-as-a-second-language"
+    "url": "https://lacite.uregina.ca/en/study-here/academics/undergraduate-programs/certificate-in-french-as-a-second-language"
   },{
     "name": "University of Regina",
     "location": "Regina, SK",
     "degree": "Bachelor of Music",
     "majors": "viola performance",
     "dates": 2001,
-    "url": "http://www.uregina.ca/mediaartperformance/areas-study/music/music-programs.html"
+    "url": "https://www.uregina.ca/mediaartperformance/areas-study/music/music-programs.html"
   }],
   "display": function() {
     education.schools.forEach(function(school) {
