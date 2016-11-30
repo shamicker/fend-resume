@@ -8,7 +8,7 @@ module.exports = function(grunt) {
 					cwd: 'src/images/',
 					src: [
 						'IPND*.png',
-						'favicon_cropped.ico',
+						'favicon.png',
 						'hipster_logo_cropped.png',
 						'sketch.jpg',
 						'transparent textures/*.png'
