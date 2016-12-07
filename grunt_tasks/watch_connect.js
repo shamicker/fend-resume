@@ -35,12 +35,16 @@ module.exports = function(grunt) {
           }
         }
       },
+      images: {
+        files: 'grunt_tasks/images.js',
+        tasks: ['responsive_images', 'img']
+      },
       html: {
         files: 'index.html',
         tasks: ['watch']
       },
       css: {
-        files: ['src/css/style.css'],
+        files: ['src/css/style.css', 'src/css/modal.css'],
         tasks: ['concat', 'postcss']
       }
     }

@@ -25,7 +25,9 @@
     <div id="main">
 
         <div id="header" class="center-content clear-fix">
-            <ul id="topContacts" class="flex-box"></ul>
+            <div id="contacts">
+              <ul class="topContacts" class="flex-box"></ul>
+            </div>
         </div>
         <div style="clear: both;"></div>
         <div id="workExperience" class="gray">
@@ -67,18 +69,12 @@
   you can't accomplish with vanilla (regular) JavaScript.
   -->
     <script src="build/js/jQuery.js"></script>
-
-    <!-- More on helper.js in the class -->
     <script src="build/js/helper.js"></script>
 
-    <!--
-  The next line tells the browser where to download the JavaScript file you'll be
-  writing. In resumeBuilder.js, you'll be writing code that builds the resume
-  dynamically when this website, index.html, is opened.
-  -->
+    <script src="build/js/bootstrapModal.js"></script>
     <script src="build/js/modal.js"></script>
     <script src="build/js/resumeBuilder.js"></script>
-    <script src="build/js/extras.js"></script>
+    <script src="build/js/contactDisplay.js"></script>
 
 
     <!--

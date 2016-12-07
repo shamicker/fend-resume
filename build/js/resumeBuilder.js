@@ -12,7 +12,7 @@ var bio = {
   // "biopic": "build/images/hipster_logo_cropped.png",
   "biopic": "build/images/sketch.jpg",
   "welcomeMessage": "As a student and alumna of <a class='text-link' href='https://www.udacity.com/us'>Udacity</a>, an online education website, I am just beginning my coding adventures! My plan is to learn front-end and then back-end web development, and then continue on learning from there.",
-  "skills": ["HTML", "CSS", "Python", "JavaScript"],
+  "skills": ["HTML", "CSS", "Python", "JavaScript", "jQuery", "GitHub", "Grunt", "PostgreSQL"],
   "iconAndLinks": {
     "email": ["fa-at", "mailto:shauna.kerr@gmail.com"],
     "github": ["fa-github", "https://github.com/shamicker"],
@@ -61,33 +61,34 @@ var bio = {
         item = item.replace("%data%", infoDisplay).replace("%className%", key);
 
         // append contact info; add aria attribute
-        $("#topContacts, #footerContacts").append(item);
+        $(".topContacts, #footerContacts").append(item);
         $(".gold-text").attr("aria-hidden", "true");
 
         // add icons
-        $("#topContacts .gold-text:last, #footerContacts .gold-text:last").addClass( icon );
+        $(".topContacts .gold-text:last, #footerContacts .gold-text:last").addClass( icon );
 
         // wrap contact info in <a> tags; add hrefs (links)
-        $("#topContacts .flex-item:last span").wrapAll("<a class='contact'></a>");
-        $("#footerContacts .flex-item:last span").wrapAll("<a class='contact'></a>");
-        $("#topContacts a:last, #footerContacts a:last").attr("href", bio.iconAndLinks[key][1]);
+        $(".topContacts .flex-item:last span").wrapAll("<a class='clickable'></a>");
+        $("#footerContacts .flex-item:last span").wrapAll("<a class='clickable'></a>");
+        $(".topContacts a:last, #footerContacts a:last").attr("href", bio.iconAndLinks[key][1]);
       }
     }
 
-    // wrap biopic, skills, welcome in divs
-    $(".biopic, .welcome-message, #skills-h3, #skills").wrapAll("<div class='flex-box first-glance'></div>");
-    // TODO: Figure out why the IDs aren't included
-
-    // append <hr> and skills
+    // append skills
     if (bio.skills.length > 0) {
-      $("#topContacts").before("<hr>");
+      $(".topContacts").before("<h3 class='contacts-h3'>Contact Info</h3>");
       $("#header").append(HTMLskillsStart);
       bio.skills.forEach(function(skill) {
         var formattedSkill = HTMLskills.replace(
           "%data%", skill);
-        $("#skills").append(formattedSkill);
+        $(".skills-ul").append(formattedSkill);
       });
     }
+
+    // wrap biopic, skills, welcome in divs
+    $(".biopic, .welcome-message").wrapAll("<div class='flex-box first-glance'></div>");
+    // add toggle
+    $(".topContacts, .skills-ul").addClass("toggle");
   }
 };
 
@@ -169,7 +170,7 @@ var work = {
     // remove <br>, wrap link inside h4, add class to <a>
     $(".work-entry p br").remove();
     $(".work-entry a").wrap("<h4></h4>");
-    $(".work-entry h4 a").addClass("header-link");
+    $(".work-entry h4 a").addClass("entry-header");
 
     // to make toggling better, wrap entries in a div
     $(".work-entry").wrapAll("<div class='work-toggle toggle'></div>");
@@ -183,26 +184,54 @@ var projects = {
   "projects": [{
     "title": "Fill in the Blanks Quiz",
     "dates": 2016,
-    "description": "designed and created an interactive quiz using Python language",
-    "images": ["src/images/IPND_Quiz2.png"],
-    "url": "https://github.com/shamicker/Fill_in_the_blanks_Quiz"
+    "description": "Designed and created an interactive quiz using Python language",
+    "images": [
+      "build/images/projects/IPND_Quiz2-med.png",
+      "build/images/projects/IPND_Quiz2-tiny.png 320w",
+      "build/images/projects/IPND_Quiz2-small.png 640w",
+      "build/images/projects/IPND_Quiz2-med.png 960w",
+      "build/images/projects/IPND_Quiz2-large.png 1280w"
+      ],
+    "url": "https://github.com/shamicker/Fill_in_the_blanks_Quiz",
+    "livePage": "#",
+    "idTitle": "quiz",
+    "paragraph": "I learned a lot about Python."
   }, {
     "title": "Movie Trailer Website",
     "dates": 2016,
-    "description": "manipulated a Bootstrap- and Python-based template to personalize a website",
-    "images": ["src/images/IPND_Trailers.png"],
-    "url": "https://github.com/shamicker/Movie_trailer_website"
+    "description": "Manipulated a Bootstrap- and Python-based template to personalize a website",
+    "images": [
+      "build/images/projects/IPND_Trailers-med.png",
+      "build/images/projects/IPND_Trailers-tiny.png 320w",
+      "build/images/projects/IPND_Trailers-small.png 640w",
+      "build/images/projects/IPND_Trailers-med.png 960w",
+      "build/images/projects/IPND_Trailers-large.png 1280w"
+      ],
+    "url": "https://github.com/shamicker/Movie_trailer_website",
+    "livePage": "https://shamicker.github.io/Movie_trailer_website",
+    "idTitle": "trailers",
+    "paragraph": "I learned a lot about how Bootstrap and Python can work together."
   }, {
     "title": "Multi-Game Tournament",
     "dates": 2016,
-    "description": "designed and created a database to organize a multi-game tournament, using PostgreSQL and Python",
-    "images": ["src/images/IPND_Tournament.png"],
-    "url": "https://github.com/shamicker/Multi-Tournament"
+    "description": "Designed and created a database to organize a multi-game tournament, using PostgreSQL and Python",
+    "images": [
+      "build/images/projects/IPND_Tournament-med.png",
+      "build/images/projects/IPND_Tournament-tiny.png 320w",
+      "build/images/projects/IPND_Tournament-small.png 640w",
+      "build/images/projects/IPND_Tournament-med.png 960w",
+      "build/images/projects/IPND_Tournament-large.png 1280w"
+      ],
+    "url": "https://github.com/shamicker/Multi-Tournament",
+    "livePage": "#",
+    "idTitle": "tournament",
+    "paragraph": "I learned a lot about relational databases, PostgreSQL, the command line, and virtual machines."
   }],
   "display": function() {
     projects.projects.forEach(function(project) {
       $("#projects").append(HTMLprojectStart);
-      $(".project-entry").addClass("flex-box");
+      $(".project-entry").attr("data-toggle", "modal");
+      $(".project-entry:last").attr("data-target", "#" + project.idTitle);
 
       var title = HTMLprojectTitle.replace("%data%",
         project.title);
@@ -212,23 +241,47 @@ var projects = {
       $(".project-entry:last").append(title);
       $(".project-entry:last").append(dates);
 
-      project.images.forEach(function(img) {
-        var caption = HTMLprojectDescription.replace("%data%", project.description);
-        caption = caption.replace("p", "figcaption");
-        var image = HTMLprojectImage.replace("%data%", img);
+      var caption = HTMLprojectDescription.replace("p", "figcaption");
+      caption = caption.replace("%data%", project.description);
+      $(".project-entry:last").append("<figure class='" + project.idTitle + "'><br></figure>");
+      $("." + project.idTitle).append(caption);
 
-        $(".project-entry:last").append("<figure class='quiz'></figure>");
-        $("figure:last").append(caption);
-        $("figure:last").append(image);
-      });
+      // only 1 displayed image per project, but displayed with srcset
+      var srcset = project.images.splice(1).join(", ");
+      var src = project.images.splice(0,1);
+
+      var image = HTMLprojectImage.replace("%srcset%", srcset);
+      $("." + project.idTitle).append(image);
+
+      // for each project, add a formatted modal!
+      var modal = HTMLmodal.replace(/%idTitle%/g, project.idTitle);
+      modal = modal.replace("%title%", project.title);
+      modal = modal.replace("%srcset%", srcset);
+      modal = modal.replace("%paragraph%", project.paragraph );
+      modal = modal.replace("%url%", project.url );
+      modal = modal.replace("%livePage%", project.livePage );
+      $("#main").after( modal );
+      $(".project-fig").addClass(project.idTitle);
+
+      // add class, src, alt to each project image AND modal image
+      $("." + project.idTitle + " img").attr("sizes", "(max-width:600) 90vw 50vw");
+      $("." + project.idTitle + " img").addClass("image");
+      $("." + project.idTitle + " img").attr("src", src );
+      $("." + project.idTitle + " img").attr("alt", project.title);
+
+      if ( project.livePage === "#" ) {
+        $("#" + project.idTitle + " a:first-of-type").addClass("disabled");
+      }
+
     });
 
-    // remove <br>
+    // remove <br> and the mysterious extra <p>
     $(".project-entry figcaption br").remove();
+    $(".project-entry figcaption p").remove();
 
     // make header link, and style it
     $(".project-entry a").wrap("<h4></h4>");
-    $(".project-entry h4 a").addClass("header-link");
+    $(".project-entry h4 a").addClass("entry-header");
     $(".project-entry").wrapAll("<div class='project-toggle toggle'></div>");
 
     // add class to h2
@@ -329,7 +382,7 @@ var education = {
     // remove <br>, wrap link in h4, add class to <a>
     $(".education-entry p br").remove();
     $(".education-entry a").wrap("<h4></h4>");
-    $(".education-entry h4 a").addClass("header-link");
+    $(".education-entry h4 a").addClass("entry-header clickable");
 
     // add toggle div - around edu, and online
     $(".education-entry, #education h3").wrapAll("<div class='education-toggle toggle'></div>");
@@ -361,9 +414,26 @@ var inName = function() {
 };
 
 
-// Show and hide sections
-$("h2").on("click", function() {
+// // Show and hide contacts/skills sections
+// $("#header h3").on("click", function() {
+//   var toToggle = $(this).siblings(".toggle");
+//   if ( toToggle.is(":hidden") ) {
+//     if ( $(this).siblings(".toggle")[0] === toToggle[0] ) {
+//       toToggle.slideDown("slow", initializeMap );
+//     } else {
+//       toToggle.slideDown("slow");
+//     }
+//   } else {
+//     toToggle.slideUp("slow");
+//   }
+// });
+
+
+// Show and hide work/project/edu sections
+$("#contacts h3, #skills h3, h2").on("click", function() {
   var toToggle = $(this).siblings(".toggle");
+  console.log( $(this) );
+  console.log( toToggle );
   if ( toToggle.is(":hidden") ) {
     if ( $(this).siblings(".toggle")[0] === toToggle[0] ) {
       toToggle.slideDown("slow", initializeMap );
@@ -387,8 +457,6 @@ $("#mapDiv h2").text("Locations");
 // TODO: mobile-friendly!
 // TODO: add more interactivity - drawing program from Treehouse?
 // TODO: add more interactivity - python interaction for quiz??
-// TODO: add credits! -- "github by Doejo from the Noun Project" icon
-// TODO: add favicon!
 
 
 

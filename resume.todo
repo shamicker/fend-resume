@@ -1,0 +1,21 @@
+PlainTasks cheat sheet: https://github.com/aziz/PlainTasks (cmd shift U):
+Online Resume:
+  implement project modals:
+   ✔ responsive images @done (16-12-06 14:54)
+   ✔ size modal header & footer @done (16-12-06 20:14)
+   ✔ implement actual modals @done (16-12-06 14:55)
+   ☐ Properly describe projects!
+   Work Experience:
+     ☐ get rid of header links (or link them to somewhere?)
+     ☐ figure out formatting!!! - make it mobile-nice, but still look like a resume!
+     ✔ @dones     @done (16-12-06 20:15)
+   Education:
+     ☐ fix formatting
+     ☐ make whole entries visibly clickable
+     ☐
+   BIO:
+     skills at a glance:
+       ☐ is it a complete list?
+       ☐ format (hidden while small screen?)
+     contacts:
+       ☐ format! (again, hidden while small screen?)

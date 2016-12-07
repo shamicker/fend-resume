@@ -29,7 +29,9 @@
     "grunt-contrib-copy": "^1.0.0",
     "grunt-contrib-jshint": "^1.0.0",
     "grunt-contrib-watch": "^1.0.0",
+    "grunt-img": "^0.1.8",
     "grunt-postcss": "^0.8.0",
+    "grunt-responsive-images": "^1.10.1",
     "load-grunt-config": "^0.19.2"
   }
 }

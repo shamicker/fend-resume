@@ -6,7 +6,7 @@ module.exports = function(grunt) {
   // configure tasks!
   // require('./grunt_tasks/css.js')(grunt);
   // require('./grunt_tasks/javascript.js')(grunt);
-  // require('./grunt_tasks/images.js')(grunt);
+  require('./grunt_tasks/images.js')(grunt);
   // require('./grunt_tasks/pagespeed.js')(grunt);
   require('./grunt_tasks/watch_connect.js')(grunt);
   require('./grunt_tasks/copy.js')(grunt);
@@ -17,9 +17,9 @@ module.exports = function(grunt) {
 
   grunt.registerTask('default', [
     'jshint',
-    // 'responsive_images',
-    // 'imageoptim',
+    'responsive_images',
     'copy',
+    'img',
     // 'sass',
     'concat',
     'postcss',

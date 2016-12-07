@@ -4,9 +4,17 @@ module.exports = function(grunt) {
 		jshint: {
 			options: {
 				"eqeqeq": true,
+				// "esnext": true,
+				"esversion": 6,
 				reporterOutput: 'build/report.js'
 			},
-			all: ['gruntfile.js', 'src/js/helper.js', 'src/js/resumeBuilder.js', 'src/js/extras.js', 'grunt_tasks/*.js']
+			all: [
+				'gruntfile.js',
+				'grunt_tasks/*.js',
+				'src/js/*.js',
+				'!src/js/bootstrapModal.js',
+				'!src/js/jQuery.js'
+				]
 		},
 
 		concat: {
@@ -19,7 +27,7 @@ module.exports = function(grunt) {
 			// 	nonull: true
 			},
 			css: {
-				src: ['src/css/normalize.css', 'src/css/style.css'],
+				src: ['src/css/normalize.css', 'src/css/style.css', 'src/css/modal.css'],
 				dest: 'src/css/concat.css'
 			}
 		},

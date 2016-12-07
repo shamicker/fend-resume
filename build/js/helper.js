@@ -32,7 +32,7 @@ var HTMLbioPic = '<img src="%data%" class="biopic">';
 var HTMLwelcomeMsg = '<span class="welcome-message">%data%</span>';
 
 var HTMLskillsStart =
-  '<h3 id="skills-h3">Skills at a Glance:</h3><ul id="skills" class="flex-box"></ul>';
+  '<div id="skills"><h3 class="skills-h3">Skills at a Glance</h3><ul class="skills-ul" class="flex-box"></ul></div>';
 var HTMLskills =
   '<li class="flex-item"><span class="white-text">%data%</span></li>';
 
@@ -47,7 +47,33 @@ var HTMLprojectStart = '<div class="project-entry"></div>';
 var HTMLprojectTitle = '<a href="#">%data%</a>';
 var HTMLprojectDates = '<div class="date-text">%data%</div>';
 var HTMLprojectDescription = '<p><br>%data%</p>';
-var HTMLprojectImage = '<img src="%data%">';
+var HTMLprojectImage = '<img srcset="%srcset%">';
+var HTMLmodal = `
+<!-- Modal -->
+<!-- id specifies which modal to show -->
+<div class="modal fade" id="%idTitle%" tabindex="-1" role="dialog" aria-labelledby="%idTitle%-title" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="%idTitle%-title">%title%</h4>
+      </div>
+      <div class="modal-body">
+        <figure class="project-fig">
+          <img class="img-responsive project-img" srcset="%srcset%">
+          <figcaption class="figcaption">
+            %paragraph%
+          </figcaption>
+        </figure>
+      </div>
+      <div class="modal-footer">
+        <a role="button" class="btn btn-default pull-left" target="_blank" href="%livePage%">Live</a>
+        <a role="button" class="btn btn-default pull-left" href="%url%" target="_blank">Code</a>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div> <!-- end modal-content -->
+  </div>
+</div> <!-- end modal fade -->
+`;
 
 var HTMLschoolStart = '<div class="education-entry"></div>';
 var HTMLschoolName = '<a href="#">%data%';
