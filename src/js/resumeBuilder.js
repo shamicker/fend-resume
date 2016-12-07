@@ -421,21 +421,36 @@ var inName = function() {
 // });
 
 
+
 // Show and hide work/project/edu sections
 $("#contacts h3, #skills h3, h2").on("click", function() {
   var toToggle = $(this).siblings(".toggle");
-  console.log( $(this) );
-  console.log( toToggle );
   if ( toToggle.is(":hidden") ) {
-    // if Map, initialize
-    if ( $(this).siblings(".toggle")[0] === toToggle[0] ) {
+
+    // if Contacts
+    if ( toToggle[0] === $(".topContacts")[0] ) {
+      toToggle.slideDown("slow", function(){
+        $(".contacts-h3").css({"border-bottom": "0"});
+      });
+
+    // if Skills
+    } else if ( toToggle[0] === $(".skills-toggle")[0] ) {
+      toToggle.slideDown("slow", function() {
+        $(".skills-h3").css({"border-bottom": "0"});
+      });
+
+    // if Map
+    } else if ( toToggle[0] === $(".map-toggle")[0] ) {
       toToggle.slideDown("slow", initializeMap );
+
+    // all others
     } else {
-      // all others
       toToggle.slideDown("slow");
     }
   } else {
-    toToggle.slideUp("slow");
+    toToggle.slideUp("slow", function(){
+      $(".contacts-h3, .skills-h3").css({"border-bottom": "1px dotted #5d4e60"});
+    });
   }
 });
 
