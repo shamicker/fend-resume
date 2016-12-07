@@ -31,6 +31,7 @@ p,
 ul {
   padding: 0;
   margin: 0;
+  line-height: 18px;
   font-family: Roboto, sans-serif;
 }
 
@@ -110,7 +111,7 @@ ul {
 }
 
 li > a,
-#skills-ul li {
+.skills-ul li {
   display: flex;
   align-items: center;
 }
@@ -149,20 +150,20 @@ span {
   /*float: right;*/
 }
 
-.fa,
 .gold-text {
   color: goldenrod;
 }
 
-.fa {
-  line-height: 16px;
-  /*min-width: 48px;*/
+.fa,
+.fa-lg {
+  /* important because fontAwesome script is after css link */
+  line-height: 18px !important;
 }
 
 .white-text {
   font-weight: 700;
   color: whitesmoke;
-  /*padding: 0;*/
+  margin-left: 5px;
 }
 
 .gray {
@@ -272,9 +273,12 @@ span {
 }
 
 .topContacts,
-.skills-ul {
+.skills-ul-div {
   /*padding:0 0 10px;*/
   display: none;
+  border: 1px dotted #5d4e60;
+  border-top: 0;
+  border-radius: 0 0 10px 10px;
 }
 
 /*TODO: Allow topContacts to be seen, maybe in menu along

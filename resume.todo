@@ -1,21 +1,26 @@
 PlainTasks cheat sheet: https://github.com/aziz/PlainTasks (cmd shift U):
 Online Resume:
-  implement project modals:
+  ☐ choose font!
+  BIO:
+     skills at a glance:
+       ✔ is it a complete list? @done (16-12-06 21:58)
+       ✔ format (hidden while small screen?) @started(16-12-06 21:57) @done (16-12-07 09:43) @lasted(11:46)
+       ☐ format - inline list, or columns
+     contacts:
+       ✔ format! (again, hidden while small screen?) @started(16-12-06 21:57) @done (16-12-07 09:43) @lasted(11:46)
+       ✔ text beside icons (in small screen) @started(16-12-07 09:45) @done (16-12-07 10:06) @lasted(0:21)
+ implement project modals:
    ✔ responsive images @done (16-12-06 14:54)
    ✔ size modal header & footer @done (16-12-06 20:14)
    ✔ implement actual modals @done (16-12-06 14:55)
    ☐ Properly describe projects!
+   ☐ format entry as visibly clickable (shadow?)
    Work Experience:
      ☐ get rid of header links (or link them to somewhere?)
      ☐ figure out formatting!!! - make it mobile-nice, but still look like a resume!
+     ☐ remove border - style like actual resume
      ✔ @dones     @done (16-12-06 20:15)
    Education:
      ☐ fix formatting
      ☐ make whole entries visibly clickable
      ☐
-   BIO:
-     skills at a glance:
-       ☐ is it a complete list?
-       ☐ format (hidden while small screen?)
-     contacts:
-       ☐ format! (again, hidden while small screen?)

@@ -32,7 +32,7 @@ var HTMLbioPic = '<img src="%data%" class="biopic">';
 var HTMLwelcomeMsg = '<span class="welcome-message">%data%</span>';
 
 var HTMLskillsStart =
-  '<div id="skills"><h3 class="skills-h3">Skills at a Glance</h3><ul class="skills-ul" class="flex-box"></ul></div>';
+  '<div id="skills"><h3 class="skills-h3">Skills at a Glance</h3><div class="skills-toggle toggle"><ul class="skills-ul flex-box"></ul></div></div>';
 var HTMLskills =
   '<li class="flex-item"><span class="white-text">%data%</span></li>';
 

@@ -20,7 +20,7 @@ module.exports = function(grunt) {
 				files: [{
 					expand: true,
 					cwd: 'src/',
-					src: ['js/*.js'],
+					src: ['js/*.js', '!js/contactDisplay.js'],
 					dest: 'build/'
 				}]
 			}

@@ -45,23 +45,15 @@ var bio = {
     for (var key in bio.contacts) {
       if (bio.contacts.hasOwnProperty(key)) {
         var item = HTMLcontactGeneric.replace("%contact%", "");
-        var infoDisplay;
-        var icon = "fa " + bio.iconAndLinks[key][0];
+        var icon = "fa " + bio.iconAndLinks[key][0] + " fa-lg";
+        var topContacts, bottomContacts;
 
-        // initial window size & contact display
-        if (window.innerWidth < 350) {
-          icon = icon + " fa-lg";
-          infoDisplay = "";
-        } else if (window.innerWidth < 500) {
-          infoDisplay = key;
-        } else {
-          infoDisplay = bio.contacts[key];
-        }
-
-        item = item.replace("%data%", infoDisplay).replace("%className%", key);
+        topContacts = item.replace("%data%", bio.contacts[key]).replace("%className%", "contact");
+        bottomContacts = item.replace("%data%", key).replace("%className%", "contact " + key);
 
         // append contact info; add aria attribute
-        $(".topContacts, #footerContacts").append(item);
+        $(".topContacts").append(topContacts);
+        $("#footerContacts").append(bottomContacts);
         $(".gold-text").attr("aria-hidden", "true");
 
         // add icons
@@ -88,7 +80,7 @@ var bio = {
     // wrap biopic, skills, welcome in divs
     $(".biopic, .welcome-message").wrapAll("<div class='flex-box first-glance'></div>");
     // add toggle
-    $(".topContacts, .skills-ul").addClass("toggle");
+    $(".topContacts").addClass("toggle");
   }
 };
 
@@ -435,9 +427,11 @@ $("#contacts h3, #skills h3, h2").on("click", function() {
   console.log( $(this) );
   console.log( toToggle );
   if ( toToggle.is(":hidden") ) {
+    // if Map, initialize
     if ( $(this).siblings(".toggle")[0] === toToggle[0] ) {
       toToggle.slideDown("slow", initializeMap );
     } else {
+      // all others
       toToggle.slideDown("slow");
     }
   } else {
