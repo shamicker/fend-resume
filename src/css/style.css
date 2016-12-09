@@ -217,12 +217,6 @@ span {
   margin-left: 5px;
 }
 
-.gray {
-  background-color: lavender;
-  padding-bottom: 10px;
-  clear: both;
-}
-
 .dark-gray {
   background-color: #5d4e60;
 }
@@ -321,6 +315,17 @@ with skills?
 #education,
 #mapDiv {
   padding: 10px 5%;
+  /*background-color: dimgrey;*/
+}
+
+#workExperience {
+  padding-top: 5%;
+  border-top: 1px solid goldenrod;
+}
+
+#mapDiv {
+  padding-bottom: 5%;
+  border-bottom: 1px solid goldenrod;
 }
 
 .work-heading,
@@ -328,8 +333,11 @@ with skills?
 .education-heading,
 #mapDiv h2 {
   border-radius: 10px;
-  /*border: 1px dotted silver;*/
-  box-shadow: 1px 1px 1px 1px silver;
+  border: 1px solid lavender;
+  box-shadow: 2px 2px 3px 0px lavender;
+  /*background-color: dimgrey;*/
+  min-height: 40px;
+  line-height: 32px;
 }
 
 .toggle {
@@ -347,12 +355,13 @@ with skills?
 }
 
 .work-entry {
-  border: 1px dotted dimgrey;
+  border: 2px dotted lavender;
 }
 
 .project-entry,
 .education-entry {
-  box-shadow: 1px 1px 6px 0;
+  border: 1px solid lavender;
+  box-shadow: 2px 2px 4px 2px lavender;
 }
 
 .work-entry p,
