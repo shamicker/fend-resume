@@ -11,7 +11,7 @@ var bio = {
   },
   // "biopic": "build/images/hipster_logo_cropped.png",
   "biopic": "build/images/sketch.jpg",
-  "welcomeMessage": "As a student and alumna of <a class='text-link' href='https://www.udacity.com/us'>Udacity</a>, an online education website, I am just beginning my coding adventures! My plan is to learn front-end and then back-end web development, and then continue on learning from there.",
+  "welcomeMessage": "As a student and alumna of <a class='italic-link gold-text' href='https://www.udacity.com/us'>Udacity</a>, an online education website, I am just beginning my coding adventures! My plan is to learn front-end and then back-end web development, and then continue on learning from there.",
   "skills": ["HTML", "CSS", "Python", "JavaScript", "jQuery", "GitHub", "Grunt", "PostgreSQL"],
   "iconAndLinks": {
     "email": ["fa-at", "mailto:shauna.kerr@gmail.com"],
@@ -85,7 +85,8 @@ var bio = {
 };
 
 var work = {
-  "jobs":[{
+  "jobs":[
+    {
       "title": "Freelance Violist",
       "employer": "Self-employed",
       "dates": "1994 - current",
@@ -144,8 +145,7 @@ var work = {
       $("#workExperience").append(HTMLworkStart);
       $(".work-entry").addClass("flex-box");
 
-      var employer = HTMLworkEmployer.replace("%data%",
-        job.employer);
+      var employer = HTMLworkEmployer.replace("%data%", job.employer);
       var title = HTMLworkTitle.replace("%data%", job.title);
       var dates = HTMLworkDates.replace("%data%", job.dates);
       var location = HTMLworkLocation.replace("%data%",
@@ -153,88 +153,93 @@ var work = {
       var description = HTMLworkDescription.replace(
         "%data%", job.description);
 
+      employer = employer.replace('<a href="#"', "<h4 class='entry-header dark-text'");
+      title = title.replace("</a>", "</h4>");
+
       $(".work-entry:last").append(employer + title);
       $(".work-entry:last").append(dates);
       $(".work-entry:last").append(location);
       $(".work-entry:last").append(description);
     });
 
-    // remove <br>, wrap link inside h4, add class to <a>
+    // remove <br>
     $(".work-entry p br").remove();
-    $(".work-entry a").wrap("<h4></h4>");
-    $(".work-entry h4 a").addClass("entry-header");
 
     // to make toggling better, wrap entries in a div
     $(".work-entry").wrapAll("<div class='work-toggle toggle'></div>");
-
     // add class to h2
     $("#workExperience h2").addClass("work-heading");
   }
 };
 
 var projects = {
-  "projects": [{
-    "title": "Fill in the Blanks Quiz",
-    "dates": 2016,
-    "description": "Designed and created an interactive quiz using Python language",
-    "images": [
-      "build/images/projects/IPND_Quiz2-med.png",
-      "build/images/projects/IPND_Quiz2-tiny.png 320w",
-      "build/images/projects/IPND_Quiz2-small.png 640w",
-      "build/images/projects/IPND_Quiz2-med.png 960w",
-      "build/images/projects/IPND_Quiz2-large.png 1280w"
-      ],
-    "url": "https://github.com/shamicker/Fill_in_the_blanks_Quiz",
-    "livePage": "#",
-    "idTitle": "quiz",
-    "paragraph": "I learned a lot about Python."
-  }, {
-    "title": "Movie Trailer Website",
-    "dates": 2016,
-    "description": "Manipulated a Bootstrap- and Python-based template to personalize a website",
-    "images": [
-      "build/images/projects/IPND_Trailers-med.png",
-      "build/images/projects/IPND_Trailers-tiny.png 320w",
-      "build/images/projects/IPND_Trailers-small.png 640w",
-      "build/images/projects/IPND_Trailers-med.png 960w",
-      "build/images/projects/IPND_Trailers-large.png 1280w"
-      ],
-    "url": "https://github.com/shamicker/Movie_trailer_website",
-    "livePage": "https://shamicker.github.io/Movie_trailer_website",
-    "idTitle": "trailers",
-    "paragraph": "I learned a lot about how Bootstrap and Python can work together."
-  }, {
-    "title": "Multi-Game Tournament",
-    "dates": 2016,
-    "description": "Designed and created a database to organize a multi-game tournament, using PostgreSQL and Python",
-    "images": [
-      "build/images/projects/IPND_Tournament-med.png",
-      "build/images/projects/IPND_Tournament-tiny.png 320w",
-      "build/images/projects/IPND_Tournament-small.png 640w",
-      "build/images/projects/IPND_Tournament-med.png 960w",
-      "build/images/projects/IPND_Tournament-large.png 1280w"
-      ],
-    "url": "https://github.com/shamicker/Multi-Tournament",
-    "livePage": "#",
-    "idTitle": "tournament",
-    "paragraph": "I learned a lot about relational databases, PostgreSQL, the command line, and virtual machines."
-  }],
+  "projects": [
+    {
+      "title": "Fill in the Blanks Quiz",
+      "dates": 2016,
+      "description": "Designed and created an interactive quiz using Python language",
+      "images": [
+        "build/images/projects/IPND_Quiz2-med.png",
+        "build/images/projects/IPND_Quiz2-tiny.png 320w",
+        "build/images/projects/IPND_Quiz2-small.png 640w",
+        "build/images/projects/IPND_Quiz2-med.png 960w",
+        "build/images/projects/IPND_Quiz2-large.png 1280w"
+        ],
+      "url": "https://github.com/shamicker/Fill_in_the_blanks_Quiz",
+      "livePage": "#",
+      "idTitle": "quiz",
+      "paragraph": "I learned a lot about Python."
+    },{
+      "title": "Movie Trailer Website",
+      "dates": 2016,
+      "description": "Manipulated a Bootstrap- and Python-based template to personalize a website",
+      "images": [
+        "build/images/projects/IPND_Trailers-med.png",
+        "build/images/projects/IPND_Trailers-tiny.png 320w",
+        "build/images/projects/IPND_Trailers-small.png 640w",
+        "build/images/projects/IPND_Trailers-med.png 960w",
+        "build/images/projects/IPND_Trailers-large.png 1280w"
+        ],
+      "url": "https://github.com/shamicker/Movie_trailer_website",
+      "livePage": "https://shamicker.github.io/Movie_trailer_website",
+      "idTitle": "trailers",
+      "paragraph": "I learned a lot about how Bootstrap and Python can work together."
+    },{
+      "title": "Multi-Game Tournament",
+      "dates": 2016,
+      "description": "Designed and created a database to organize a multi-game tournament, using PostgreSQL and Python",
+      "images": [
+        "build/images/projects/IPND_Tournament-med.png",
+        "build/images/projects/IPND_Tournament-tiny.png 320w",
+        "build/images/projects/IPND_Tournament-small.png 640w",
+        "build/images/projects/IPND_Tournament-med.png 960w",
+        "build/images/projects/IPND_Tournament-large.png 1280w"
+        ],
+      "url": "https://github.com/shamicker/Multi-Tournament",
+      "livePage": "#",
+      "idTitle": "tournament",
+      "paragraph": "I learned a lot about relational databases, PostgreSQL, the command line, and virtual machines."
+    }],
   "display": function() {
     projects.projects.forEach(function(project) {
       $("#projects").append(HTMLprojectStart);
       $(".project-entry").attr("data-toggle", "modal");
       $(".project-entry:last").attr("data-target", "#" + project.idTitle);
 
-      var title = HTMLprojectTitle.replace("%data%",
-        project.title);
+      var title = HTMLprojectTitle
+              .replace("%data%", "%%")
+              .replace(/a/g, "h4")
+              .replace('href="#"', "class='entry-header dark-text'")
+              .replace("%%", project.title);
       var dates = HTMLprojectDates.replace("%data%",
         project.dates);
 
       $(".project-entry:last").append(title);
       $(".project-entry:last").append(dates);
 
-      var caption = HTMLprojectDescription.replace("p", "figcaption");
-      caption = caption.replace("%data%", project.description);
+      var caption = HTMLprojectDescription
+              .replace(/p/g, "figcaption")
+              .replace("%data%", project.description);
       $(".project-entry:last").append("<figure class='" + project.idTitle + "'><br></figure>");
       $("." + project.idTitle).append(caption);
 
@@ -246,12 +251,13 @@ var projects = {
       $("." + project.idTitle).append(image);
 
       // for each project, add a formatted modal!
-      var modal = HTMLmodal.replace(/%idTitle%/g, project.idTitle);
-      modal = modal.replace("%title%", project.title);
-      modal = modal.replace("%srcset%", srcset);
-      modal = modal.replace("%paragraph%", project.paragraph );
-      modal = modal.replace("%url%", project.url );
-      modal = modal.replace("%livePage%", project.livePage );
+      var modal = HTMLmodal
+                .replace(/%idTitle%/g, project.idTitle)
+                .replace("%title%", project.title)
+                .replace("%srcset%", srcset)
+                .replace("%paragraph%", project.paragraph )
+                .replace("%url%", project.url )
+                .replace("%livePage%", project.livePage );
       $("#main").after( modal );
       $(".project-fig").addClass(project.idTitle);
 
@@ -272,8 +278,6 @@ var projects = {
     $(".project-entry figcaption p").remove();
 
     // make header link, and style it
-    $(".project-entry a").wrap("<h4></h4>");
-    $(".project-entry h4 a").addClass("entry-header");
     $(".project-entry").wrapAll("<div class='project-toggle toggle'></div>");
 
     // add class to h2
@@ -282,46 +286,53 @@ var projects = {
 };
 
 var education = {
-  "onlineCourses": [{
-    "school": "Udacity",
-    "title": "Front End Nanodegree",
-    "dates": 2016,
-    "description": "",
-    "url": "https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001?v=fe1",
-    "displayURL": "www.udacity.com/fend/"
-  },{
-    "school": "Udacity",
-    "title": "Introduction to Programming Nanodegree",
-    "dates": 2016,
-    "description": "Learned programming basics such as HTML, CSS; gained" +
-      " working knowledge of Python, JavaScript, jQuery, JSON," +
-      " PostgreSQL, Bootstrap; completed projects, both from scratch and" +
-      " from templates, using all of the aforementioned knowledge and more.",
-    "url": "https://www.udacity.com/course/intro-to-programming-nanodegree--nd000#project_modal_3568138824",
-    "displayURL": "www.udacity.com/ipnd/"
-  }],
-  "schools": [{
-    "name": "University of Regina",
-    "location": "Regina, SK",
-    "degree": "Certificate in French as a Second Language",
-    "majors": "",
-    "dates": 2007,
-    "description": "Awarded the 'Canadian Millennium Scholarship Foundation Bursary' for the highest GPA within the Faculty of Arts.",
-    "url": "https://lacite.uregina.ca/en/study-here/academics/undergraduate-programs/certificate-in-french-as-a-second-language"
-  },{
-    "name": "University of Regina",
-    "location": "Regina, SK",
-    "degree": "Bachelor of Music",
-    "majors": "viola performance",
-    "dates": 2001,
-    "url": "https://www.uregina.ca/mediaartperformance/areas-study/music/music-programs.html"
-  }],
+  "onlineCourses": [
+    {
+      "school": "Udacity",
+      "title": "Front End Web Developer Nanodegree",
+      "dates": 2016,
+      "description": "",
+      "url": "https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001?v=fe1",
+      "displayURL": "www.udacity.com/fend/"
+    },{
+      "school": "Udacity",
+      "title": "Introduction to Programming Nanodegree",
+      "dates": 2016,
+      "description": "Learned programming basics such as HTML, CSS; gained" +
+        " working knowledge of Python, JavaScript, jQuery, JSON," +
+        " PostgreSQL, Bootstrap; completed projects, both from scratch and" +
+        " from templates, using all of the aforementioned knowledge and more.",
+      "url": "https://www.udacity.com/course/intro-to-programming-nanodegree--nd000#project_modal_3568138824",
+      "displayURL": "www.udacity.com/ipnd/"
+    }],
+  "schools": [
+    {
+      "name": "University of Regina",
+      "location": "Regina, SK",
+      "degree": "Certificate in French as a Second Language",
+      "majors": "",
+      "dates": 2007,
+      "description": "Awarded the 'Canadian Millennium Scholarship Foundation Bursary' for the highest GPA within the Faculty of Arts.",
+      "url": "https://lacite.uregina.ca/en/study-here/academics/undergraduate-programs/certificate-in-french-as-a-second-language"
+    },{
+      "name": "University of Regina",
+      "location": "Regina, SK",
+      "degree": "Bachelor of Music",
+      "majors": "viola performance",
+      "dates": 2001,
+      "url": "https://www.uregina.ca/mediaartperformance/areas-study/music/music-programs.html"
+    }],
   "display": function() {
     education.schools.forEach(function(school) {
       $("#education").append(HTMLschoolStart);
 
-      var name = HTMLschoolName.replace("%data%", school.name);
-      var degree = HTMLschoolDegree.replace("%data%", school.degree);
+      var name = HTMLschoolName
+              .replace("<a", "<h4")
+              .replace('href="#"', "class='entry-header dark-text'")
+              .replace("%data%", school.name);
+      var degree = HTMLschoolDegree
+              .replace("a>", "h4>")
+              .replace("%data%", school.degree);
       var dates = HTMLschoolDates.replace("%data%", school.dates);
       var location = HTMLschoolLocation.replace("%data%", school.location);
 
@@ -343,18 +354,20 @@ var education = {
         major = major.replace("%data%", school.majors);
         $(".education-entry:last").append(major);
       }
-
-      // $(".education-entry:last").append("<br>");
     });
 
-    // $("#education").append("<br>");
     $("#education").append(HTMLonlineClasses);
 
     education.onlineCourses.forEach(function(course) {
       $("#education").append(HTMLschoolStart);
 
-      var school = HTMLonlineSchool.replace("%data%", course.school);
-      var title = HTMLonlineTitle.replace("%data%", course.title);
+      var title = HTMLonlineTitle
+              .replace("<a", "<h4")
+              .replace('href="#"', "class='entry-header dark-text'")
+              .replace("%data%", course.title);
+      var school = HTMLonlineSchool
+              .replace("a>", "h4>")
+              .replace("%data%", course.school);
       var dates = HTMLonlineDates.replace("%data%", course.dates);
       var url = HTMLonlineURL.replace("%data%", course.displayURL);
 
@@ -365,6 +378,7 @@ var education = {
 
       if ( course.url !== "" ) {
         $(".education-entry:last a").attr("href", course.url);
+        $(".education-entry:last a").addClass("italic dark-text");
       }
     });
 
@@ -373,8 +387,8 @@ var education = {
 
     // remove <br>, wrap link in h4, add class to <a>
     $(".education-entry p br").remove();
-    $(".education-entry a").wrap("<h4></h4>");
-    $(".education-entry h4 a").addClass("entry-header clickable");
+    // $(".education-entry a").wrap("<h4></h4>");
+    // $(".education-entry h4 a").addClass("entry-header clickable");
 
     // add toggle div - around edu, and online
     $(".education-entry, #education h3").wrapAll("<div class='education-toggle toggle'></div>");
@@ -385,15 +399,10 @@ var education = {
 };
 
 
-
-
 bio.display();
 work.display();
 projects.display();
 education.display();
-
-// TODO: make links go to new tab
-
 
 
 // button to internationalize name
@@ -404,22 +413,6 @@ var inName = function() {
     " " + names[1].toUpperCase();
   return names;
 };
-
-
-// // Show and hide contacts/skills sections
-// $("#header h3").on("click", function() {
-//   var toToggle = $(this).siblings(".toggle");
-//   if ( toToggle.is(":hidden") ) {
-//     if ( $(this).siblings(".toggle")[0] === toToggle[0] ) {
-//       toToggle.slideDown("slow", initializeMap );
-//     } else {
-//       toToggle.slideDown("slow");
-//     }
-//   } else {
-//     toToggle.slideUp("slow");
-//   }
-// });
-
 
 
 // Show and hide work/project/edu sections
@@ -435,7 +428,7 @@ $("#contacts h3, #skills h3, h2").on("click", function() {
 
     // if Skills
     } else if ( toToggle[0] === $(".skills-toggle")[0] ) {
-      toToggle.slideDown("slow", function() {
+      toToggle.slideDown("fast", function() {
         $(".skills-h3").css({"border-bottom": "0"});
       });
 

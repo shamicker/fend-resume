@@ -24,7 +24,9 @@ module.exports = function(grunt) {
 					dest: 'build/'
 				}]
 			}
-		}
+		},
+
+		clean: ["src/images/projects", "build/**"]
 
 	});
 };

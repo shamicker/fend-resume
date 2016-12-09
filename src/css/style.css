@@ -133,47 +133,8 @@ span {
   padding: 2.5% 5%;
 }
 
-.date-text {
-  /*float: left;*/
-}
-
-.date-text,
-.location-text {
-  font-style: italic;
-  font-size: 14px;
-  color: dimgrey;
-  line-height: 16px;
-  padding: 2px 4px 0 0;
-}
-
-.location-text {
-  /*float: right;*/
-}
-
-.gold-text {
-  color: goldenrod;
-}
-
-.fa,
-.fa-lg {
-  /* important because fontAwesome script is after css link */
-  line-height: 18px !important;
-}
-
-.white-text {
-  font-weight: 700;
-  color: whitesmoke;
-  margin-left: 5px;
-}
-
-.gray {
-  background-color: lavender;
-  padding-bottom: 10px;
-  clear: both;
-}
-
-.dark-gray {
-  background-color: #5d4e60;
+.bright {
+  background-color: dimgrey;
 }
 
 .flex-box {
@@ -205,22 +166,16 @@ span {
   overflow: auto;
 }
 
-.bright {
-  background-color: dimgrey;
-}
-
-.flex-item:hover .white-text {
+.topContacts .flex-item:hover .white-text,
+.skills-ul .flex-item:hover .white-text {
   color: #5d4e60;
 }
 
-.text-link {
-  color: goldenrod;
-  /*font-style: normal;*/
+#footerContacts .flex-item:hover .white-text {
+  font-style: italic;
 }
 
-.text-link:hover {
-  /*font-weight: bold;*/
-  /*text-decoration: underline;*/
+.italic-link:hover {
   font-style: normal;
 }
 
@@ -233,15 +188,54 @@ span {
   min-height: 48px;
 }
 
-.header-link:hover,
+.italic,
+.italic-link,
 .clickable:hover {
   font-style: italic;
 }
 
-/*********************************************************************
- * LAYOUT ***********************************************************/
+.date-text,
+.location-text {
+  font-style: italic;
+  font-size: 14px;
+  color: dimgrey;
+  line-height: 16px;
+  padding: 2px 4px 0 0;
+}
+
+.dark-text {
+  color: #5d4e60;
+}
+
+.gold-text {
+  color: goldenrod;
+}
+
+.white-text {
+  font-weight: 700;
+  color: whitesmoke;
+  margin-left: 5px;
+}
+
+.gray {
+  background-color: lavender;
+  padding-bottom: 10px;
+  clear: both;
+}
+
+.dark-gray {
+  background-color: #5d4e60;
+}
+
+.fa,
+.fa-lg {
+  /* important because fontAwesome script is after css link */
+  line-height: 18px !important;
+}
+
 
 /**************************************************
+ * Layout --
  * HEADER
  **************************************************/
 
@@ -261,7 +255,8 @@ span {
 .skills-h3 {
   color: goldenrod;
   border-radius: 10px;
-  border: 1px dotted #5d4e60;
+  /*border: 1px dotted #5d4e60;*/
+  box-shadow: 1px 1px 2px 1px #5d4e60;
   /*background-color: #5d4e60;*/
   margin: 10px 0;
   min-height: 40px;
@@ -328,6 +323,15 @@ with skills?
   padding: 10px 5%;
 }
 
+.work-heading,
+.project-heading,
+.education-heading,
+#mapDiv h2 {
+  /*border-radius: 10px;*/
+  /*border: 1px dotted silver;*/
+  /*box-shadow: 1px 1px 1px 1px silver;*/
+}
+
 .toggle {
   display: none;
 }
@@ -337,13 +341,18 @@ with skills?
 .education-entry {
   margin: 10px auto;
   padding: 3px; /*inside each entry*/
-  border: 1px solid dimgrey;
   border-radius: 10px;
   justify-content: space-between;
   max-width: calc(600px - 10vw);
 }
-.work-entry:first-of-type {
-  margin-top: 0;
+
+.work-entry {
+  border: 1px dotted dimgrey;
+}
+
+.project-entry,
+.education-entry {
+  box-shadow: 1px 1px 6px 0;
 }
 
 .work-entry p,

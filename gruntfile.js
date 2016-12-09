@@ -16,6 +16,7 @@ module.exports = function(grunt) {
   grunt.registerTask('live', ['connect', 'watch']);
 
   grunt.registerTask('default', [
+    'clean',
     'jshint',
     'responsive_images',
     'copy',
