@@ -327,9 +327,9 @@ with skills?
 .project-heading,
 .education-heading,
 #mapDiv h2 {
-  /*border-radius: 10px;*/
+  border-radius: 10px;
   /*border: 1px dotted silver;*/
-  /*box-shadow: 1px 1px 1px 1px silver;*/
+  box-shadow: 1px 1px 1px 1px silver;
 }
 
 .toggle {
