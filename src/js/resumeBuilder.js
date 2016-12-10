@@ -293,7 +293,7 @@ var education = {
       "dates": 2016,
       "description": "",
       "url": "https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001?v=fe1",
-      "displayURL": "www.udacity.com/fend/"
+      "displayURL": "www.udacity.com"
     },{
       "school": "Udacity",
       "title": "Introduction to Programming Nanodegree",
@@ -303,7 +303,7 @@ var education = {
         " PostgreSQL, Bootstrap; completed projects, both from scratch and" +
         " from templates, using all of the aforementioned knowledge and more.",
       "url": "https://www.udacity.com/course/intro-to-programming-nanodegree--nd000#project_modal_3568138824",
-      "displayURL": "www.udacity.com/ipnd/"
+      "displayURL": "www.udacity.com"
     }],
   "schools": [
     {

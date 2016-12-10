@@ -96,8 +96,8 @@ figcaption {
   font-size: 14px;
   color: dimgrey;
   line-height: 21px;
-  /*padding: 5px;*/
-  width: 100%;
+  padding: 5px;
+  /*width: 100%;*/
 }
 
 a, button {
@@ -203,6 +203,10 @@ span {
   padding: 2px 4px 0 0;
 }
 
+.location-text + p {
+  flex-basis: 100%;
+}
+
 .dark-text {
   color: #5d4e60;
 }
@@ -233,6 +237,7 @@ span {
  * HEADER
  **************************************************/
 
+
 #header {
   padding: 5%;
   background: dimgrey;
@@ -241,9 +246,15 @@ span {
 
 .header {
   /*padding: 0;*/
+  /*flex-basis: 100%;*/
 }
 
 /*******************************/
+
+#contacts,
+#skills {
+  /*width: 45%;*/
+}
 
 .contacts-h3,
 .skills-h3 {
@@ -258,13 +269,12 @@ span {
 }
 
 .skills-h3 {
-  margin-top: 20px;
+  /*margin-top: 20px;*/
 }
 
 .topContacts,
 .skills-toggle {
   /*padding:0 0 10px;*/
-  display: none;
   border: 1px dotted #5d4e60;
   border-top: 0;
   border-radius: 0 0 10px 10px;
@@ -332,9 +342,9 @@ with skills?
 .project-heading,
 .education-heading,
 #mapDiv h2 {
-  border-radius: 10px;
-  border: 1px solid lavender;
-  box-shadow: 2px 2px 3px 0px lavender;
+  border-radius: 5px;
+  /*border: 1px solid dimgrey;*/
+  box-shadow: 1px 1px 6px 0px dimgrey;
   /*background-color: dimgrey;*/
   min-height: 40px;
   line-height: 32px;
@@ -347,30 +357,32 @@ with skills?
 .work-entry,
 .project-entry,
 .education-entry {
-  margin: 10px auto;
-  padding: 3px; /*inside each entry*/
-  border-radius: 10px;
+  margin: 8% auto;
+  padding: 5px; /*inside each entry*/
+  border-radius: 15px;
   justify-content: space-between;
   max-width: calc(600px - 10vw);
 }
 
 .work-entry {
-  border: 2px dotted lavender;
+  padding: 10px;
+  /*border: 2px dotted lavender;*/
 }
 
 .project-entry,
 .education-entry {
   border: 1px solid lavender;
-  box-shadow: 2px 2px 4px 2px lavender;
+  box-shadow: 2px 2px 4px 1px dimgrey;
 }
 
 .work-entry p,
 .education-entry p {
-  border-top: 1px solid dimgrey;
+  border-top: 1px dotted dimgrey;
+  /*border-top: 2px solid lavender;*/
 }
 
 .education-entry a:last-of-type {
-  margin-top: 0;
+  /*margin-top: 0;*/
 }
 
 .image {
