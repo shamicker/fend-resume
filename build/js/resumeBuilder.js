@@ -12,7 +12,7 @@ var bio = {
   // "biopic": "build/images/hipster_logo_cropped.png",
   "biopic": "build/images/sketch.jpg",
   "welcomeMessage": "As a student and alumna of <a class='italic-link gold-text' href='https://www.udacity.com/us'>Udacity</a>, an online education website, I am just beginning my coding adventures! My plan is to learn front-end and then back-end web development, and then continue on learning from there.",
-  "skills": ["HTML", "CSS", "Python", "JavaScript", "jQuery", "GitHub", "Grunt", "PostgreSQL"],
+  "skills": ["HTML", "CSS", "Python", "JavaScript", "jQuery", "GitHub", "Grunt"],
   "iconAndLinks": {
     "email": ["fa-at", "mailto:shauna.kerr@gmail.com"],
     "github": ["fa-github", "https://github.com/shamicker"],
@@ -79,6 +79,8 @@ var bio = {
 
     // wrap biopic, skills, welcome in divs
     $(".biopic, .welcome-message").wrapAll("<div class='flex-box first-glance'></div>");
+    // wrap contact info & skills in div
+    // $("#contacts, #skills").wrapAll("<div class='flex-box header-buttons'></div>");
     // add toggle
     $(".topContacts").addClass("toggle");
   }
@@ -90,7 +92,7 @@ var work = {
       "title": "Freelance Violist",
       "employer": "Self-employed",
       "dates": "1994 - current",
-      "location": ["Regina, SK", " Montreal, QC"],
+      "location": "Regina, SK/Montreal, QC",
       "description": "Performed in numerous chamber ensembles and orchestras" +
         " at a wide variety of functions, including many special events" +
         " such as the Saskatchewan Centennial Gala (attended by Queen" +
@@ -240,7 +242,7 @@ var projects = {
       var caption = HTMLprojectDescription
               .replace(/p/g, "figcaption")
               .replace("%data%", project.description);
-      $(".project-entry:last").append("<figure class='" + project.idTitle + "'><br></figure>");
+      $(".project-entry:last").append("<figure class='" + project.idTitle + "'></figure>");
       $("." + project.idTitle).append(caption);
 
       // only 1 displayed image per project, but displayed with srcset
@@ -293,7 +295,7 @@ var education = {
       "dates": 2016,
       "description": "",
       "url": "https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001?v=fe1",
-      "displayURL": "www.udacity.com"
+      "displayURL": "www.udacity.com/fend/"
     },{
       "school": "Udacity",
       "title": "Introduction to Programming Nanodegree",
@@ -303,7 +305,7 @@ var education = {
         " PostgreSQL, Bootstrap; completed projects, both from scratch and" +
         " from templates, using all of the aforementioned knowledge and more.",
       "url": "https://www.udacity.com/course/intro-to-programming-nanodegree--nd000#project_modal_3568138824",
-      "displayURL": "www.udacity.com"
+      "displayURL": "www.udacity.com/ipnd/"
     }],
   "schools": [
     {
@@ -378,7 +380,7 @@ var education = {
 
       if ( course.url !== "" ) {
         $(".education-entry:last a").attr("href", course.url);
-        $(".education-entry:last a").addClass("italic dark-text");
+        $(".education-entry:last a").addClass("italic dark-text link-text");
       }
     });
 

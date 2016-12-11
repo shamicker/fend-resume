@@ -10,6 +10,7 @@ primary: dimgrey
 */
 
 * {
+  box-sizing: border-box;
   /*border: 1px solid red;*/
 }
 
@@ -41,7 +42,7 @@ body {
 }
 
 h1 {
-  font-size: 40px;
+  font-size: 48px;
   color: goldenrod;
   line-height: 48px;
   display: inline;
@@ -79,9 +80,9 @@ h5 {
 }
 
 h1 + span {
-  color: #5d4e60;
+  color: #4d3e50;
   /*font-weight: bold;*/
-  font-size: larger;
+  font-size: x-large;
   line-height: 1.75;
   /*vertical-align: middle;*/
 
@@ -96,8 +97,8 @@ figcaption {
   font-size: 14px;
   color: dimgrey;
   line-height: 21px;
-  padding: 5px;
-  /*width: 100%;*/
+  padding: 2px;
+  text-align: justify;
 }
 
 a, button {
@@ -134,7 +135,9 @@ span {
 }
 
 .bright {
-  background-color: dimgrey;
+  border-bottom: 1px solid goldenrod;
+  /*background-color: dimgrey;*/
+  /*border-radius: 0 0 5px 5px;*/
 }
 
 .flex-box {
@@ -171,6 +174,12 @@ span {
   color: #5d4e60;
 }
 
+#footerContacts {
+  /*border-radius: 5px;*/
+  padding: 0 0 15px;
+  /*background-color: dimgrey;*/
+}
+
 #footerContacts .flex-item:hover .white-text {
   font-style: italic;
 }
@@ -200,7 +209,16 @@ span {
   font-size: 14px;
   color: dimgrey;
   line-height: 16px;
-  padding: 2px 4px 0 0;
+  padding: 2px 0 0;
+}
+
+.date-text {
+  flex: 0 1 35%;
+}
+
+.location-text {
+  flex: 1 0 60%;
+  text-align: right;
 }
 
 .location-text + p {
@@ -221,10 +239,6 @@ span {
   margin-left: 5px;
 }
 
-.dark-gray {
-  background-color: #5d4e60;
-}
-
 .fa,
 .fa-lg {
   /* important because fontAwesome script is after css link */
@@ -237,14 +251,38 @@ span {
  * HEADER
  **************************************************/
 
+#main {
+  width: 100%;
+}
+
+#header-wrapper {
+  background-color: #5d4e60;
+  /*max-width: 1000px;*/
+  /*margin: 0 auto;*/
+}
+
+#footer {
+  background-color: #5d4e60;
+}
+
+#header,
+#workExperience,
+#projects,
+#education,
+#mapDiv,
+#lets-connect {
+  max-width: 800px;
+  margin: 0 auto;
+}
 
 #header {
-  padding: 5%;
-  background: dimgrey;
+  padding: 5% 5% 1%;
+  background: #5d4e60;
   /*background: dimgrey url(./../../src/images/transparent\ textures/rocky-wall.png);*/
 }
 
 .header {
+  border-bottom: 1px solid goldenrod;
   /*padding: 0;*/
   /*flex-basis: 100%;*/
 }
@@ -253,29 +291,37 @@ span {
 
 #contacts,
 #skills {
-  /*width: 45%;*/
+  margin: 4% auto;
+}
+
+#skills {
+  /*margin-bottom: 0;*/
 }
 
 .contacts-h3,
 .skills-h3 {
   color: goldenrod;
-  border-radius: 10px;
-  /*border: 1px dotted #5d4e60;*/
-  box-shadow: 1px 1px 2px 1px #5d4e60;
+  border-radius: 5px;
+  /*border: 1px dotted #4d3e50;*/
+  box-shadow: 1px 1px 2px 1px #4d3e50;
   /*background-color: #5d4e60;*/
-  margin: 10px 0;
+  /*margin: 5% 0;*/
   min-height: 40px;
   line-height: 32px;
 }
 
-.skills-h3 {
-  /*margin-top: 20px;*/
+.skills-ul .flex-item {
+  min-height: 48px;
+}
+
+.skills-ul .white-text {
+  margin-left: 0;
 }
 
 .topContacts,
 .skills-toggle {
   /*padding:0 0 10px;*/
-  border: 1px dotted #5d4e60;
+  border: 1px dotted #4d3e50;
   border-top: 0;
   border-radius: 0 0 10px 10px;
 }
@@ -296,6 +342,7 @@ with skills?
   text-align: justify;
   text-indent: 1em;
   padding: 10px;
+  max-width: 500px;
 }
 
 .biopic {
@@ -324,18 +371,19 @@ with skills?
 #projects,
 #education,
 #mapDiv {
-  padding: 10px 5%;
-  /*background-color: dimgrey;*/
+  padding: 0 5%;
+  margin: 4% auto;
+  background-color: whitesmoke;
 }
 
-#workExperience {
-  padding-top: 5%;
-  border-top: 1px solid goldenrod;
-}
-
-#mapDiv {
-  padding-bottom: 5%;
+#header-wrapper {
+  /*padding-bottom: 5%;*/
   border-bottom: 1px solid goldenrod;
+}
+
+#footer {
+  /*padding-bottom: 5%;*/
+  border-top: 1px solid goldenrod;
 }
 
 .work-heading,
@@ -348,6 +396,7 @@ with skills?
   /*background-color: dimgrey;*/
   min-height: 40px;
   line-height: 32px;
+  cursor: pointer;
 }
 
 .toggle {
@@ -371,11 +420,23 @@ with skills?
 
 .project-entry,
 .education-entry {
+  /*border: 1px solid lavender;*/
+  /*box-shadow: 2px 2px 4px 1px dimgrey;*/
+}
+
+.education-entry .link-text {
+  flex: 1 0 50%;
+  margin: 5px 50% 5px 0;
+  padding: 10px 5px;
+  min-height: 40px;
+  border-radius: 5px;
   border: 1px solid lavender;
-  box-shadow: 2px 2px 4px 1px dimgrey;
+  box-shadow: 1px 1px 2px 0px dimgrey;
+  cursor: pointer;
 }
 
 .work-entry p,
+.project-entry figcaption,
 .education-entry p {
   border-top: 1px dotted dimgrey;
   /*border-top: 2px solid lavender;*/
@@ -391,17 +452,21 @@ with skills?
   border-radius: 10px;
 }
 
+.project-entry .image {
+  box-shadow: 1px 1px 4px 0 dimgrey;
+}
+
 /**************************************************
  * FOOTER & MAP
  **************************************************/
 
 .map-toggle {
-  margin: 0 10% 5%;
+  margin: 5% 10%;
 }
 
 .map-toggle h4 {
-  min-height: 0;
   font-style: italic;
+  padding: 0 0 5px;
   /*color: #5d4e60;*/
 }
 
@@ -412,6 +477,7 @@ with skills?
 
 #lets-connect {
   text-align: center;
+  /*padding: 0 0 30px;*/
 }
 
 /**************************************************
