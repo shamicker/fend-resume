@@ -242,7 +242,7 @@ var projects = {
       var caption = HTMLprojectDescription
               .replace(/p/g, "figcaption")
               .replace("%data%", project.description);
-      $(".project-entry:last").append("<figure class='" + project.idTitle + "'></figure>");
+      $(".project-entry:last").append("<figure class='" + project.idTitle + "'><br></figure>");
       $("." + project.idTitle).append(caption);
 
       // only 1 displayed image per project, but displayed with srcset
@@ -375,17 +375,17 @@ var education = {
 
       $(".education-entry:last").append(title + school);
       $(".education-entry:last").append(dates);
+      $(".education-entry:last").append("<br>");
       $(".education-entry:last").append(url);
-      // $(".education-entry:last").append("<br>");
 
       if ( course.url !== "" ) {
         $(".education-entry:last a").attr("href", course.url);
-        $(".education-entry:last a").addClass("italic dark-text link-text");
+        $(".education-entry:last a").addClass("italic-link dark-text");
       }
     });
 
     // Make flexy
-    $(".education-entry").addClass("flex-box");
+    // $(".education-entry").addClass("flex-box");
 
     // remove <br>, wrap link in h4, add class to <a>
     $(".education-entry p br").remove();

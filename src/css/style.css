@@ -1,12 +1,13 @@
 /*
 COLOURS:
-lightest: whitesmoke
-darkest: #5d4e60
-medium: lavender
+lightest: #f5f5f5
+darkest: #696969
+darkest-in-use: #5D4E6-0---8-26c7f;
+medium: #E6E6FA
 
-accent: goldenrod
-primary: dimgrey
-
+accent: #FF6B35
+primary: #444545
+baabbd
 */
 
 * {
@@ -37,13 +38,24 @@ ul {
 }
 
 body {
-  background-color: whitesmoke;
-  color: dimgrey;
+  background-color: #f5f5f5;
+  color: #444545;
+}
+
+h1 + span,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  /*font-family: 'Arimo', sans-serif;*/
+  font-family: 'Lato', sans-serif;
+  /*font-family: 'Roboto', sans-serif;*/
 }
 
 h1 {
   font-size: 48px;
-  color: goldenrod;
+  color: #FF6B35;
   line-height: 48px;
   display: inline;
 }
@@ -51,14 +63,14 @@ h1 {
 h2 {
   font-weight: 700;
   font-size: 24px;
-  color: goldenrod;
+  color: #FF6B35;
   line-height: 29px;
 }
 
 h3 {
   font-style: italic;
   font-size: 20px;
-  color: #5d4e60;
+  color: #696969;
   line-height: 22px;
 }
 
@@ -66,7 +78,7 @@ h4 {
   /*font-weight: 700;*/
   font-weight: normal;
   font-size: 18px;
-  color: goldenrod;
+  color: #FF6B35;
   /*line-height: 17px;*/
   line-height: 24px;
   /*padding: 0 5%;*/
@@ -80,29 +92,27 @@ h5 {
 }
 
 h1 + span {
-  color: #4d3e50;
-  /*font-weight: bold;*/
+  color: #444545;
+  font-weight: bold;
   font-size: x-large;
   line-height: 1.75;
-  /*vertical-align: middle;*/
-
 }
 
-hr {
-  border: 1px groove whitesmoke;
-}
+/*hr {
+  border: 1px groove #f5f5f5;
+}*/
 
 p,
 figcaption {
   font-size: 14px;
-  color: dimgrey;
-  line-height: 21px;
-  padding: 2px;
+  color: #444545;
+  line-height: 22px;
+  padding: 5px 2px;
   text-align: justify;
 }
 
 a, button {
-  color: #5d4e60;
+  color: #696969;
   text-decoration: none;
   cursor: pointer;
 }
@@ -135,8 +145,8 @@ span {
 }
 
 .bright {
-  border-bottom: 1px solid goldenrod;
-  /*background-color: dimgrey;*/
+  border-bottom: 1px solid #FF6B35;
+  /*background-color: #444545;*/
   /*border-radius: 0 0 5px 5px;*/
 }
 
@@ -171,13 +181,13 @@ span {
 
 .topContacts .flex-item:hover .white-text,
 .skills-ul .flex-item:hover .white-text {
-  color: #5d4e60;
+  color: #444545;
 }
 
 #footerContacts {
   /*border-radius: 5px;*/
   padding: 0 0 15px;
-  /*background-color: dimgrey;*/
+  /*background-color: #444545;*/
 }
 
 #footerContacts .flex-item:hover .white-text {
@@ -197,7 +207,6 @@ span {
   min-height: 48px;
 }
 
-.italic,
 .italic-link,
 .clickable:hover {
   font-style: italic;
@@ -207,17 +216,19 @@ span {
 .location-text {
   font-style: italic;
   font-size: 14px;
-  color: dimgrey;
+  color: #444545;
   line-height: 16px;
   padding: 2px 0 0;
 }
 
 .date-text {
-  flex: 0 1 35%;
+  /*flex: 0 1 35%;*/
+  float: left;
 }
 
 .location-text {
-  flex: 1 0 60%;
+  /*flex: 1 0 60%;*/
+  /*float: left;*/
   text-align: right;
 }
 
@@ -226,16 +237,16 @@ span {
 }
 
 .dark-text {
-  color: #5d4e60;
+  color: #696969;
 }
 
 .gold-text {
-  color: goldenrod;
+  color: #FF6B35;
 }
 
 .white-text {
   font-weight: 700;
-  color: whitesmoke;
+  color: #f5f5f5;
   margin-left: 5px;
 }
 
@@ -256,13 +267,13 @@ span {
 }
 
 #header-wrapper {
-  background-color: #5d4e60;
+  background-color: #696969;
   /*max-width: 1000px;*/
   /*margin: 0 auto;*/
 }
 
 #footer {
-  background-color: #5d4e60;
+  background-color: #696969;
 }
 
 #header,
@@ -277,21 +288,24 @@ span {
 
 #header {
   padding: 5% 5% 1%;
-  background: #5d4e60;
-  /*background: dimgrey url(./../../src/images/transparent\ textures/rocky-wall.png);*/
+  background: #696969;
+  /*background: #444545 url(./../../src/images/transparent\ textures/rocky-wall.png);*/
 }
 
 .header {
-  border-bottom: 1px solid goldenrod;
-  /*padding: 0;*/
-  /*flex-basis: 100%;*/
+  border-bottom: 1px solid #FF6B35;
+}
+
+.header,
+.first-glance {
+  flex-basis: 100%;
 }
 
 /*******************************/
 
 #contacts,
 #skills {
-  margin: 4% auto;
+  margin: 4% 0;
 }
 
 #skills {
@@ -300,11 +314,11 @@ span {
 
 .contacts-h3,
 .skills-h3 {
-  color: goldenrod;
+  color: #FF6B35;
   border-radius: 5px;
-  /*border: 1px dotted #4d3e50;*/
-  box-shadow: 1px 1px 2px 1px #4d3e50;
-  /*background-color: #5d4e60;*/
+  /*border: 1px dotted #444545;*/
+  box-shadow: 1px 1px 2px 1px #444545;
+  /*background-color: #696969;*/
   /*margin: 5% 0;*/
   min-height: 40px;
   line-height: 32px;
@@ -321,7 +335,7 @@ span {
 .topContacts,
 .skills-toggle {
   /*padding:0 0 10px;*/
-  border: 1px dotted #4d3e50;
+  border: 1px dotted #444545;
   border-top: 0;
   border-radius: 0 0 10px 10px;
 }
@@ -335,9 +349,9 @@ with skills?
 
 .welcome-message {
   flex-basis: 100%;
-  font-style: italic;
+  /*font-style: italic;*/
   font-size: 16px;
-  color: lavender;
+  color: #E6E6FA;
   line-height: 24px;
   text-align: justify;
   text-indent: 1em;
@@ -351,12 +365,12 @@ with skills?
   margin: 5%;
   /*max-height: 100%;*/
   /*max-width: 100%;*/
-  max-width: 200px;
-  max-height: 150px;
+  max-width: 40vw;
+  max-height: calc(3/4 * 40vw);
   /*display: none;*/
   border-radius: 30px;
-  /*border: 3px solid #5d4e60;*/
-  border: 1px dotted goldenrod;
+  /*border: 3px solid #696969;*/
+  border: 1px dotted #FF6B35;
 }
 
 
@@ -372,18 +386,18 @@ with skills?
 #education,
 #mapDiv {
   padding: 0 5%;
-  margin: 4% auto;
-  background-color: whitesmoke;
+  margin: 3% auto;
+  background-color: #f5f5f5;
 }
 
 #header-wrapper {
   /*padding-bottom: 5%;*/
-  border-bottom: 1px solid goldenrod;
+  border-bottom: 1px solid #FF6B35;
 }
 
 #footer {
   /*padding-bottom: 5%;*/
-  border-top: 1px solid goldenrod;
+  border-top: 1px solid #FF6B35;
 }
 
 .work-heading,
@@ -391,9 +405,9 @@ with skills?
 .education-heading,
 #mapDiv h2 {
   border-radius: 5px;
-  /*border: 1px solid dimgrey;*/
-  box-shadow: 1px 1px 6px 0px dimgrey;
-  /*background-color: dimgrey;*/
+  /*border: 1px solid #444545;*/
+  box-shadow: 1px 1px 6px 0px #444545;
+  /*background-color: #444545;*/
   min-height: 40px;
   line-height: 32px;
   cursor: pointer;
@@ -406,40 +420,45 @@ with skills?
 .work-entry,
 .project-entry,
 .education-entry {
-  margin: 8% auto;
-  padding: 5px; /*inside each entry*/
-  border-radius: 15px;
+  margin: 5% auto;
+  padding: 3px; /*inside each entry*/
+  /*border-radius: 15px;*/
+  /*border: 1px solid red;*/
   justify-content: space-between;
   max-width: calc(600px - 10vw);
 }
 
 .work-entry {
   padding: 10px;
-  /*border: 2px dotted lavender;*/
+  /*border: 2px dotted #E6E6FA;*/
+}
+
+.project-entry {
+  margin: 8% auto;
 }
 
 .project-entry,
 .education-entry {
-  /*border: 1px solid lavender;*/
-  /*box-shadow: 2px 2px 4px 1px dimgrey;*/
+  /*border: 1px solid #E6E6FA;*/
+  /*box-shadow: 2px 2px 4px 1px #444545;*/
 }
 
 .education-entry .link-text {
-  flex: 1 0 50%;
+/*  flex: 1 0 50%;
   margin: 5px 50% 5px 0;
   padding: 10px 5px;
   min-height: 40px;
   border-radius: 5px;
-  border: 1px solid lavender;
-  box-shadow: 1px 1px 2px 0px dimgrey;
+  border: 1px solid #E6E6FA;
+  box-shadow: 1px 1px 2px 0px #444545;*/
   cursor: pointer;
 }
 
 .work-entry p,
 .project-entry figcaption,
 .education-entry p {
-  border-top: 1px dotted dimgrey;
-  /*border-top: 2px solid lavender;*/
+  border-top: 1px dotted #444545;
+  /*border-top: 2px solid #E6E6FA;*/
 }
 
 .education-entry a:last-of-type {
@@ -448,12 +467,13 @@ with skills?
 
 .image {
   max-width: 100%;
-  border: 1px solid lavender;
+  /*border: 1px solid #E6E6FA;*/
   border-radius: 10px;
 }
 
 .project-entry .image {
-  box-shadow: 1px 1px 4px 0 dimgrey;
+  margin: 2% 0;
+  box-shadow: 2px 4px 15px 2px #444545;
 }
 
 /**************************************************
@@ -467,7 +487,7 @@ with skills?
 .map-toggle h4 {
   font-style: italic;
   padding: 0 0 5px;
-  /*color: #5d4e60;*/
+  /*color: #696969;*/
 }
 
 #map {
@@ -506,4 +526,24 @@ figure {
 /**************************************************
  * MEDIA QUERIES
  **************************************************/
+
+@media screen and (min-width: 520px) {
+  #header {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+  }
+
+  #contacts,
+  #skills {
+    flex: 0 1 48%;
+  }
+
+}
+
+@media screen and (min-width: 820px) {
+  .map-toggle {
+    margin: 5%;
+  }
+}
 
