@@ -40,10 +40,71 @@ module.exports = function(grunt) {
         files: [{
           expand: true,
           cwd: 'src/images',
-          src: ['./IPND_*.png'],
+          src: ['./IPND_*.png', '!./IPND_Quiz2.png'],
           dest: 'src/images/projects'
         }]
       },
+
+      quiz2: {
+        options: {
+          sizes: [
+            {
+              width: 320,
+              height: 240,
+              name: 'tiny',
+              aspectRatio: false,
+              gravity: 'Northwest'
+            },{
+              width: 640,
+              height: 360,
+              name: 'small',
+              aspectRatio: false,
+              gravity: 'Northwest'
+            },{
+              width: 960,
+              name: 'med',
+              aspectRatio: false
+              // gravity:
+            },{
+              width: 1280,
+              name: 'large',
+              aspectRatio: false
+              // gravity:
+            }
+          ]
+        },
+        files: [{
+          expand: true,
+          cwd: 'src/images',
+          src: ['./IPND_Quiz2.png'],
+          dest: 'src/images/projects'
+        }]
+      },
+
+      sketch: {
+        options: {
+          sizes: [
+            {
+              width: 180,
+              quality: 40,
+              name: 'small',
+              aspectRatio: true
+            },
+            {
+              width: 256,
+              quality: 100,
+              name: 'large',
+              aspectRatio: true
+            }
+          ]
+        },
+        files: [{
+          expand: true,
+          cwd: 'src/images',
+          src: ['./sketch.jpg'],
+          dest: 'src/images/projects'
+        }]
+      }
 
       // logo: {
       //   options: {
@@ -65,16 +126,16 @@ module.exports = function(grunt) {
 
     img: {
       indFiles: {
-        src: ['src/images/favicon.png', 'src/images/hipster_logo_cropped.png', 'src/images/sketch.jpg'],
+        src: ['src/images/favicon.png', 'src/images/hipster_logo_cropped.png'],
         dest: 'build/images'
       },
       projects: {
-        src: 'src/images/projects/*.png',
+        src: 'src/images/projects/*.{png,jpg}',
         dest: 'build/images/projects'
-      },
-      textures: {
-        src: 'src/images/transparent\ textures/*.png',
-        dest: 'build/images/textures'
+      // },
+      // textures: {
+      //   src: 'src/images/transparent\ textures/*.png',
+      //   dest: 'build/images/textures'
       }
     }
 

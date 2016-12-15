@@ -9,8 +9,8 @@ var bio = {
     "location": "Montreal, QC",
     "linkedin": "canadian-shauna-kerr"
   },
-  // "biopic": "build/images/hipster_logo_cropped.png",
-  "biopic": "build/images/sketch.jpg",
+  "biopic": "build/images/projects/sketch-large.jpg",
+  "biopicImages": ["build/images/projects/sketch-small.jpg 180w", "build/images/projects/sketch-large.jpg 256w"],
   "welcomeMessage": "As a student and alumna of <a class='italic-link gold-text' href='https://www.udacity.com/us'>Udacity</a>, an online education website, I am just beginning my coding adventures! My plan is to learn front-end and then back-end web development, and then continue on learning from there.",
   "skills": ["HTML", "CSS", "Python", "JavaScript", "jQuery", "GitHub", "Grunt"],
   "iconAndLinks": {
@@ -34,8 +34,10 @@ var bio = {
     $("#header").prepend(role);
     $("#header").prepend(name);
 
-    // add alt to biopic
+    // add alt, sizes, srcset to biopic
     $(".biopic").attr("alt", "stylized image of me");
+    $(".biopic").attr("srcset", bio.biopicImages);
+    $(".biopic").attr("sizes", "(max-width: 600px) 40vw, 256px");
 
     // put name and role in own div
     $("#header h1, #header span:first-of-type").wrapAll("<header class='header flex-box'></header>");
@@ -264,7 +266,7 @@ var projects = {
       $(".project-fig").addClass(project.idTitle);
 
       // add class, src, alt to each project image AND modal image
-      $("." + project.idTitle + " img").attr("sizes", "(max-width:600) 90vw 50vw");
+      $("." + project.idTitle + " img").attr("sizes", "(max-width:556px) 90vw, 500px");
       $("." + project.idTitle + " img").addClass("image");
       $("." + project.idTitle + " img").attr("src", src );
       $("." + project.idTitle + " img").attr("alt", project.title);

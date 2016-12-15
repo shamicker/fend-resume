@@ -592,6 +592,10 @@ span {
   padding: 5px;
 }
 
+br {
+  clear: left;
+}
+
 
 /**************************************************
 * MODULES
@@ -810,7 +814,6 @@ with skills?
 
 .welcome-message {
   flex-basis: 100%;
-  /*font-style: italic;*/
   font-size: 16px;
   color: #E6E6FA;
   line-height: 24px;
@@ -821,16 +824,12 @@ with skills?
 }
 
 .biopic {
-  /*padding: 5%;*/
-  /*float: left;*/
-  margin: 5%;
-  /*max-height: 100%;*/
-  /*max-width: 100%;*/
-  max-width: 40vw;
-  max-height: calc(3/4 * 40vw);
-  /*display: none;*/
+  margin: 8% 5% 5%;
+  width: 40vw;
+  height: 40vw;
+  max-width: 256px;
+  max-height: 256px;
   border-radius: 30px;
-  /*border: 3px solid #696969;*/
   border: 1px dotted #FF6B35;
 }
 
@@ -882,11 +881,11 @@ with skills?
 .project-entry,
 .education-entry {
   margin: 5% auto;
-  padding: 3px; /*inside each entry*/
+  /*padding: 3px; inside each entry*/
   /*border-radius: 15px;*/
   /*border: 1px solid red;*/
   justify-content: space-between;
-  max-width: calc(600px - 10vw);
+  max-width: 500px;
 }
 
 .work-entry {
@@ -927,12 +926,13 @@ with skills?
 }
 
 .image {
-  max-width: 100%;
+  width: 100%;
   /*border: 1px solid #E6E6FA;*/
   border-radius: 10px;
 }
 
 .project-entry .image {
+  /*max-width: 100%;*/
   margin: 2% 0;
   box-shadow: 2px 4px 15px 2px #444545;
 }

@@ -11,7 +11,7 @@ Online Resume:
        ✔ format! (again, hidden while small screen?) @started(16-12-06 21:57) @done (16-12-07 09:43) @lasted(11:46)
        ✔ text beside icons (in small screen) @started(16-12-07 09:45) @done (16-12-07 10:06) @lasted(0:21)
      biopic:
-       ☐ fix max-width OR the optimization
+       ✔ fix max-width OR the optimization @done (16-12-15 16:05)
  Work Experience:
      ✔ get rid of header links (or link them to somewhere?) @started(16-12-08 09:59) @done (16-12-09 16:13) @lasted(1 day, 6:14)
      ✔ figure out formatting!!! - make it mobile-nice, but still look like a resume! @done (16-12-14 14:40)
@@ -26,5 +26,5 @@ Online Resume:
 
    Education:
      ✔ fix formatting @done (16-12-14 14:40)
-     ☐ make whole entries visibly clickable
+     ✔ make whole entries visibly clickable @done (16-12-15 16:05)
      ☐
