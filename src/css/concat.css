@@ -463,7 +463,6 @@ template {
 COLOURS:
 lightest: #f5f5f5
 darkest: #696969
-darkest-in-use: #5D4E6-0---8-26c7f;
 medium: #E6E6FA
 
 accent: #FF6B35
@@ -472,8 +471,8 @@ baabbd
 */
 
 * {
-  box-sizing: border-box;
-  /*border: 1px solid red;*/
+    box-sizing: border-box;
+    /*border: 1px solid red;*/
 }
 
 
@@ -492,15 +491,15 @@ h6,
 li,
 p,
 ul {
-  padding: 0;
-  margin: 0;
-  line-height: 18px;
-  font-family: Roboto, sans-serif;
+    padding: 0;
+    margin: 0;
+    line-height: 18px;
+    font-family: Roboto, sans-serif;
 }
 
 body {
-  background-color: #f5f5f5;
-  color: #444545;
+    background-color: #f5f5f5;
+    color: #444545;
 }
 
 h1 + span,
@@ -509,91 +508,83 @@ h3,
 h4,
 h5,
 h6 {
-  /*font-family: 'Arimo', sans-serif;*/
-  font-family: 'Lato', sans-serif;
-  /*font-family: 'Roboto', sans-serif;*/
+    font-family: 'Lato', sans-serif;
 }
 
 h1 {
-  font-size: 48px;
-  color: #FF6B35;
-  line-height: 48px;
-  display: inline;
+    font-size: 48px;
+    color: #FF6B35;
+    line-height: 48px;
+    display: inline;
 }
 
 h2 {
-  font-weight: 700;
-  font-size: 24px;
-  color: #FF6B35;
-  line-height: 29px;
+    font-weight: 700;
+    font-size: 24px;
+    color: #FF6B35;
+    line-height: 29px;
 }
 
 h3 {
-  font-style: italic;
-  font-size: 20px;
-  color: #696969;
-  line-height: 22px;
+    font-style: italic;
+    font-size: 20px;
+    color: #696969;
+    line-height: 22px;
 }
 
 h4 {
-  /*font-weight: 700;*/
-  font-weight: normal;
-  font-size: 18px;
-  color: #FF6B35;
-  /*line-height: 17px;*/
-  line-height: 24px;
-  /*padding: 0 5%;*/
-  width: 100%;
+    font-weight: normal;
+    font-size: 18px;
+    color: #FF6B35;
+    line-height: 24px;
+    width: 100%;
 }
 
 h2,
 h3,
 h5 {
-  padding: 10px 5%;
+    padding: 10px 5%;
 }
 
 h1 + span {
-  color: #444545;
-  font-weight: bold;
-  font-size: x-large;
-  line-height: 1.75;
+    color: #444545;
+    font-weight: bold;
+    font-size: x-large;
+    line-height: 1.75;
 }
-
-/*hr {
-  border: 1px groove #f5f5f5;
-}*/
 
 p,
 figcaption {
-  font-size: 14px;
-  color: #444545;
-  line-height: 22px;
-  padding: 5px 2px;
-  text-align: justify;
+    font-size: 14px;
+    color: #444545;
+    line-height: 22px;
+    padding: 5px 2px;
+    text-align: justify;
 }
 
-a, button {
-  color: #696969;
-  text-decoration: none;
-  cursor: pointer;
+a,
+button {
+    color: #696969;
+    text-decoration: none;
+    cursor: pointer;
 }
 
 ul {
-  list-style: none;
+    list-style: none;
 }
 
 li > a,
 .skills-ul li {
-  display: flex;
-  align-items: center;
+    display: flex;
+    align-items: center;
 }
 
 span {
-  padding: 5px;
+    padding: 5px;
 }
 
 br {
-  clear: left;
+    clear: left;
 }
 
 
@@ -602,123 +593,114 @@ br {
 **************************************************/
 
 .centered {
-  margin: 0 auto;
+    margin: 0 auto;
 }
 
 .center-content {
-  padding: 2.5% 5%;
+    padding: 2.5% 5%;
 }
 
 .bright {
-  border-bottom: 1px solid #FF6B35;
-  /*background-color: #444545;*/
-  /*border-radius: 0 0 5px 5px;*/
+    border-bottom: 1px solid #FF6B35;
 }
 
 .flex-box {
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -ms-flex-pack: distribute;
-  justify-content: space-around;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
 }
 
 .flex-box,
 .flex-column {
-  display: -ms-flexbox;
-  display: flex;
-  /*width: 100%;*/
-  /*padding: 10px;*/
+    display: -ms-flexbox;
+    display: flex;
 }
 
 .flex-column {
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -ms-flex-wrap: nowrap;
-  flex-wrap: nowrap;
-  align-items: center;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    align-items: center;
 }
 
 .clear-fix {
-  overflow: auto;
+    overflow: auto;
 }
 
 .topContacts .flex-item:hover .white-text,
 .skills-ul .flex-item:hover .white-text {
-  color: #444545;
+    color: #444545;
 }
 
 #footerContacts {
-  /*border-radius: 5px;*/
-  padding: 0 0 15px;
-  /*background-color: #444545;*/
+    padding: 0 0 15px;
 }
 
 #footerContacts .flex-item:hover .white-text {
-  font-style: italic;
+    font-style: italic;
 }
 
 .italic-link:hover {
-  font-style: normal;
+    font-style: normal;
 }
 
 .entry-header {
-  display: flex;
-  align-items: center;
+    display: flex;
+    align-items: center;
 }
 
 .clickable {
-  min-height: 48px;
+    min-height: 48px;
 }
 
 .italic-link,
 .clickable:hover {
-  font-style: italic;
+    font-style: italic;
 }
 
 .date-text,
 .location-text {
-  font-style: italic;
-  font-size: 14px;
-  color: #444545;
-  line-height: 16px;
-  padding: 2px 0 0;
+    font-style: italic;
+    font-size: 14px;
+    color: #444545;
+    line-height: 16px;
+    padding: 2px 0 0;
 }
 
 .date-text {
-  /*flex: 0 1 35%;*/
-  float: left;
+    float: left;
 }
 
 .location-text {
-  /*flex: 1 0 60%;*/
-  /*float: left;*/
-  text-align: right;
+    text-align: right;
 }
 
 .location-text + p {
-  flex-basis: 100%;
+    flex-basis: 100%;
 }
 
 .dark-text {
-  color: #696969;
+    color: #696969;
 }
 
 .gold-text {
-  color: #FF6B35;
+    color: #FF6B35;
 }
 
 .white-text {
-  font-weight: 700;
-  color: #f5f5f5;
-  margin-left: 5px;
+    font-weight: 700;
+    color: #f5f5f5;
+    margin-left: 5px;
 }
 
 .fa,
 .fa-lg {
   /* important because fontAwesome script is after css link */
-  line-height: 18px !important;
+    line-height: 18px !important;
 }
 
 
@@ -728,17 +710,15 @@ br {
  **************************************************/
 
 #main {
-  width: 100%;
+    width: 100%;
 }
 
 #header-wrapper {
-  background-color: #696969;
-  /*max-width: 1000px;*/
-  /*margin: 0 auto;*/
+    background-color: #696969;
 }
 
 #footer {
-  background-color: #696969;
+    background-color: #696969;
 }
 
 #header,
@@ -747,90 +727,70 @@ br {
 #education,
 #mapDiv,
 #lets-connect {
-  max-width: 800px;
-  margin: 0 auto;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 #header {
-  padding: 5% 5% 1%;
-  background: #696969;
-  /*background: #444545 url(./../../src/images/transparent\ textures/rocky-wall.png);*/
+    padding: 5% 5% 1%;
 }
 
 .header {
-  border-bottom: 1px solid #FF6B35;
+    border-bottom: 1px solid #FF6B35;
 }
 
 .header,
 .first-glance {
-  flex-basis: 100%;
+    flex-basis: 100%;
 }
-
-/*******************************/
 
 #contacts,
 #skills {
-  margin: 4% 0;
-}
-
-#skills {
-  /*margin-bottom: 0;*/
+    margin: 4% 0;
 }
 
 .contacts-h3,
 .skills-h3 {
-  color: #FF6B35;
-  border-radius: 5px;
-  /*border: 1px dotted #444545;*/
-  box-shadow: 1px 1px 2px 1px #444545;
-  /*background-color: #696969;*/
-  /*margin: 5% 0;*/
-  min-height: 40px;
-  line-height: 32px;
+    color: #FF6B35;
+    border-radius: 5px;
+    box-shadow: 1px 1px 2px 1px #444545;
+    min-height: 40px;
+    line-height: 32px;
 }
 
 .skills-ul .flex-item {
-  min-height: 48px;
+    min-height: 48px;
 }
 
 .skills-ul .white-text {
-  margin-left: 0;
+    margin-left: 0;
 }
 
 .topContacts,
 .skills-toggle {
-  /*padding:0 0 10px;*/
-  border: 1px dotted #444545;
-  border-top: 0;
-  border-radius: 0 0 10px 10px;
+    border-top: 0;
+    border-radius: 0 0 10px 10px;
 }
 
-/*TODO: Allow topContacts to be seen, maybe in menu along
-with skills?
-*/
-
-/*******************************/
-
-
 .welcome-message {
-  flex-basis: 100%;
-  font-size: 16px;
-  color: #E6E6FA;
-  line-height: 24px;
-  text-align: justify;
-  text-indent: 1em;
-  padding: 10px;
-  max-width: 500px;
+    flex-basis: 100%;
+    font-size: 16px;
+    color: #E6E6FA;
+    line-height: 24px;
+    text-align: justify;
+    text-indent: 1em;
+    padding: 10px;
+    max-width: 500px;
 }
 
 .biopic {
-  margin: 8% 5% 5%;
-  width: 40vw;
-  height: 40vw;
-  max-width: 256px;
-  max-height: 256px;
-  border-radius: 30px;
-  border: 1px dotted #FF6B35;
+    margin: 8% 5% 5%;
+    width: 40vw;
+    height: 40vw;
+    max-width: 256px;
+    max-height: 256px;
+    border-radius: 30px;
+    border: 1px dotted #FF6B35;
 }
 
 
@@ -845,96 +805,68 @@ with skills?
 #projects,
 #education,
 #mapDiv {
-  padding: 0 5%;
-  margin: 3% auto;
-  background-color: #f5f5f5;
+    padding: 0 5%;
+    margin: 3% auto;
+    background-color: #f5f5f5;
 }
 
 #header-wrapper {
-  /*padding-bottom: 5%;*/
-  border-bottom: 1px solid #FF6B35;
+    border-bottom: 1px solid #FF6B35;
 }
 
 #footer {
-  /*padding-bottom: 5%;*/
-  border-top: 1px solid #FF6B35;
+    border-top: 1px solid #FF6B35;
 }
 
 .work-heading,
 .project-heading,
 .education-heading,
 #mapDiv h2 {
-  border-radius: 5px;
-  /*border: 1px solid #444545;*/
-  box-shadow: 1px 1px 6px 0px #444545;
-  /*background-color: #444545;*/
-  min-height: 40px;
-  line-height: 32px;
-  cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 1px 1px 6px 0px #444545;
+    min-height: 40px;
+    line-height: 32px;
+    cursor: pointer;
 }
 
 .toggle {
-  display: none;
+    display: none;
 }
 
 .work-entry,
 .project-entry,
 .education-entry {
-  margin: 5% auto;
-  /*padding: 3px; inside each entry*/
-  /*border-radius: 15px;*/
-  /*border: 1px solid red;*/
-  justify-content: space-between;
-  max-width: 500px;
+    margin: 5% auto;
+    justify-content: space-between;
+    max-width: 500px;
 }
 
 .work-entry {
-  padding: 10px;
-  /*border: 2px dotted #E6E6FA;*/
+    padding: 10px;
 }
 
 .project-entry {
-  margin: 8% auto;
-}
-
-.project-entry,
-.education-entry {
-  /*border: 1px solid #E6E6FA;*/
-  /*box-shadow: 2px 2px 4px 1px #444545;*/
+    margin: 8% auto;
 }
 
 .education-entry .link-text {
-/*  flex: 1 0 50%;
-  margin: 5px 50% 5px 0;
-  padding: 10px 5px;
-  min-height: 40px;
-  border-radius: 5px;
-  border: 1px solid #E6E6FA;
-  box-shadow: 1px 1px 2px 0px #444545;*/
-  cursor: pointer;
+    cursor: pointer;
 }
 
 .work-entry p,
 .project-entry figcaption,
 .education-entry p {
-  border-top: 1px dotted #444545;
-  /*border-top: 2px solid #E6E6FA;*/
-}
-
-.education-entry a:last-of-type {
-  /*margin-top: 0;*/
+    border-top: 1px dotted #444545;
 }
 
 .image {
-  width: 100%;
-  /*border: 1px solid #E6E6FA;*/
-  border-radius: 10px;
+    width: 100%;
+    border-radius: 10px;
 }
 
 .project-entry .image {
-  /*max-width: 100%;*/
-  margin: 2% 0;
-  box-shadow: 2px 4px 15px 2px #444545;
+    margin: 2% 0;
+    box-shadow: 2px 4px 15px 2px #444545;
 }
 
 /**************************************************
@@ -942,23 +874,21 @@ with skills?
  **************************************************/
 
 .map-toggle {
-  margin: 5% 10%;
+    margin: 5% 10%;
 }
 
 .map-toggle h4 {
-  font-style: italic;
-  padding: 0 0 5px;
-  /*color: #696969;*/
+    font-style: italic;
+    padding: 0 0 5px;
 }
 
 #map {
-  display: block;
-  height: 400px;
+    display: block;
+    height: 400px;
 }
 
 #lets-connect {
-  text-align: center;
-  /*padding: 0 0 30px;*/
+    text-align: center;
 }
 
 /**************************************************
@@ -966,21 +896,23 @@ with skills?
  **************************************************/
 
 figure {
-  /*border: 1px solid grey;*/
-  /*padding: 3px;*/
-  margin: 0;
-  -webkit-margin-before: 0;
-  -webkit-margin-after: 0;
-  -webkit-margin-start: 0;
-  -webkit-margin-end: 0;
+    margin: 0;
+    -webkit-margin-before: 0;
+    -webkit-margin-after: 0;
+    -webkit-margin-start: 0;
+    -webkit-margin-end: 0;
 }
 
 .modal-title {
-  font-size: larger;
+    font-size: larger;
 }
 
 .modal-body {
-  padding: 0;
+    padding: 0;
+}
+
+.modal-body .image {
+    border: 1px solid #E6E6FA;
 }
 
 
@@ -989,23 +921,24 @@ figure {
  **************************************************/
 
 @media screen and (min-width: 520px) {
-  #header {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
-  }
 
-  #contacts,
-  #skills {
-    flex: 0 1 48%;
-  }
+    #header {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+    }
 
+    #contacts,
+    #skills {
+        flex: 0 1 48%;
+    }
 }
 
 @media screen and (min-width: 820px) {
-  .map-toggle {
-    margin: 5%;
-  }
+
+    .map-toggle {
+        margin: 5%;
+    }
 }
 
 ;
