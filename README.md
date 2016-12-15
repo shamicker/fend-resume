@@ -1,7 +1,7 @@
 # Online Resume 
 ## Built for Udacity's FEND course
 
-The [Project Rubric](https://review.udacity.com/?_ga=1.189245867.12280332.1465333852#!/projects/2962818615/rubric), to make the basic project look something like ![this](http://i.imgur.com/pWU1Xbl.png) was forked from [Github](https://github.com/udacity/frontend-nanodegree-resume)
+The [Project Rubric](https://review.udacity.com/?_ga=1.189245867.12280332.1465333852#!/projects/2962818615/rubric) was forked from [Github](https://github.com/udacity/frontend-nanodegree-resume).
 
 The JSON in __resumeBuilder.js__ needed to follow this form.
   * `bio` contains:
@@ -54,3 +54,4 @@ The JSON in __resumeBuilder.js__ needed to follow this form.
                   images: array with string urls
             display: function taking no parameters
 
+The basic project was to look something like this. ![this](http://i.imgur.com/pWU1Xbl.png) 
