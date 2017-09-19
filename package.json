@@ -24,15 +24,21 @@
   "homepage": "https://github.com/shamicker/frontend-nanodegree-resume#readme",
   "devDependencies": {
     "grunt": "^0.4.5",
-    "grunt-contrib-clean": "^1.0.0",
+    "grunt-contrib-clean": "^1.1.0",
     "grunt-contrib-concat": "^1.0.1",
     "grunt-contrib-connect": "^1.0.2",
     "grunt-contrib-copy": "^1.0.0",
-    "grunt-contrib-jshint": "^1.0.0",
+    "grunt-contrib-jshint": "^1.1.0",
     "grunt-contrib-watch": "^1.0.0",
     "grunt-img": "^0.1.8",
     "grunt-postcss": "^0.8.0",
     "grunt-responsive-images": "^1.10.1",
     "load-grunt-config": "^0.19.2"
+  },
+  "dependencies": {
+    "autoprefixer": "^7.1.4",
+    "cssnano": "^3.10.0",
+    "grunt-autoprefixer": "^3.0.4",
+    "pixrem": "^4.0.1"
   }
 }

@@ -15,6 +15,7 @@ module.exports = function(grunt) {
 
   grunt.registerTask('live', ['connect', 'watch']);
 
+  grunt.registerTask('refactor', ['jshint', 'copy']);
   grunt.registerTask('default', [
     'clean',
     'jshint',

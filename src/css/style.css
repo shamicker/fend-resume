@@ -368,9 +368,9 @@ br {
     cursor: pointer;
 }
 
-.toggle {
+/*.toggle {
     display: none;
-}
+}*/
 
 .work-entry,
 .project-entry,
@@ -422,7 +422,7 @@ br {
 }
 
 #map {
-    display: block;
+    /*display: block;*/
     height: 400px;
 }
 

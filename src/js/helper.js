@@ -15,24 +15,24 @@ var HTMLheaderRole = '<span>%data%</span>';
 
 var HTMLcontactGeneric =
     '<li class="flex-item"><span class="gold-text">%contact%</span><span class="white-text %className%">%data%</span></li>';
-var HTMLmobile =
-    '<li class="flex-item"><span class="gold-text">mobile</span><span class="white-text">%data%</span></li>';
-var HTMLemail =
-    '<li class="flex-item"><span class="gold-text">email</span><span class="white-text">%data%</span></li>';
-var HTMLtwitter =
-    '<li class="flex-item"><span class="gold-text">twitter</span><span class="white-text">%data%</span></li>';
-var HTMLgithub =
-    '<li class="flex-item"><span class="gold-text">github</span><span class="white-text">%data%</span></li>';
-var HTMLblog =
-    '<li class="flex-item"><span class="gold-text">blog</span><span class="white-text">%data%</span></li>';
-var HTMLlocation =
-    '<li class="flex-item"><span class="gold-text">location</span><span class="white-text">%data%</span></li>';
+// var HTMLmobile =
+//     '<li class="flex-item"><span class="gold-text">mobile</span><span class="white-text">%data%</span></li>';
+// var HTMLemail =
+//     '<li class="flex-item"><span class="gold-text">email</span><span class="white-text">%data%</span></li>';
+// var HTMLtwitter =
+//     '<li class="flex-item"><span class="gold-text">twitter</span><span class="white-text">%data%</span></li>';
+// var HTMLgithub =
+//     '<li class="flex-item"><span class="gold-text">github</span><span class="white-text">%data%</span></li>';
+// var HTMLblog =
+//     '<li class="flex-item"><span class="gold-text">blog</span><span class="white-text">%data%</span></li>';
+// var HTMLlocation =
+//     '<li class="flex-item"><span class="gold-text">location</span><span class="white-text">%data%</span></li>';
 
 var HTMLbioPic = '<img src="%data%" class="biopic">';
 var HTMLwelcomeMsg = '<span class="welcome-message">%data%</span>';
 
 var HTMLskillsStart =
-    '<div id="skills"><h3 class="skills-h3">Skills at a Glance</h3><div class="skills-toggle toggle"><ul class="skills-ul flex-box"></ul></div></div>';
+    '<div id="skills"><h3 class="skills-h3">Skills at a Glance</h3><div><ul class="skills-ul flex-box"></ul></div></div>';
 var HTMLskills =
     '<li class="flex-item"><span class="white-text">%data%</span></li>';
 
@@ -89,7 +89,7 @@ var HTMLonlineDates = '<div class="date-text">%data%</div>';
 var HTMLonlineURL = '<a href="#">%data%</a>';
 
 var internationalizeButton = '<button>Internationalize My Name</button>';
-var googleMap = "<div class='map-toggle toggle'><h4>Where I've Lived and Worked</h4><div id='map'></div></div>";
+var googleMap = "<div class='map-toggle' style='display:none;'><h4>Where I've Lived and Worked</h4><div id='map'></div></div>";
 
 
 /*
@@ -98,7 +98,7 @@ The Internationalize Names challenge found in the lesson Flow Control from JavaS
 $(document).ready(function() {
     $('button').click(function() {
         var $name = $('#name');
-        var iName = inName($name.text()) || function() {};
+        var iName = intName($name.text()) || function() {};
         $name.html(iName);
     });
 });
@@ -162,13 +162,13 @@ function initializeMap() {
         var locations = [];
 
         // adds the single location property from bio to the locations array
-        locations.push(bio.contacts.location);
+        locations.push(model.bio.contacts.location);
 
         // iterates through school locations and appends each location to
         // the locations array. Note that forEach is used for array iteration
         // as described in the Udacity FEND Style Guide:
         // https://udacity.github.io/frontend-nanodegree-styleguide/javascript.html#for-in-loop
-        education.schools.forEach(function(school) {
+        model.education.schools.forEach(function(school) {
             locations.push(school.location);
         });
 
@@ -176,7 +176,7 @@ function initializeMap() {
         // the locations array. Note that forEach is used for array iteration
         // as described in the Udacity FEND Style Guide:
         // https://udacity.github.io/frontend-nanodegree-styleguide/javascript.html#for-in-loop
-        work.jobs.forEach(function(job) {
+        model.work.forEach(function(job) {
             locations.push(job.location);
         });
 

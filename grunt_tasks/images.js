@@ -5,6 +5,7 @@ module.exports = function(grunt) {
 
       IPND: {
         options: {
+          engine: 'im',
           sizes: [
             {
               // width: 320,
@@ -47,6 +48,7 @@ module.exports = function(grunt) {
 
       quiz2: {
         options: {
+          engine: 'im',
           sizes: [
             {
               width: 320,
@@ -83,6 +85,7 @@ module.exports = function(grunt) {
 
       sketch: {
         options: {
+          engine: 'im',
           sizes: [
             {
               width: 180,
